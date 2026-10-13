@@ -1784,32 +1784,46 @@ html&gt;body{padding:0}&lt;/style&gt;
   &lt;div class=&quot;ps-proposal&quot;&gt;Propuesta de interfaz &lt;span&gt;Datos de ejemplo&lt;/span&gt;&lt;/div&gt;
   &lt;div class=&quot;ps-app&quot;&gt;
     &lt;aside class=&quot;ps-sidebar&quot;&gt;
-      &lt;div class=&quot;ps-brand&quot;&gt;&lt;span class=&quot;ps-brandmark&quot;&gt;P&lt;/span&gt;&lt;div&gt;Panel Shop&lt;small&gt;Administración&lt;/small&gt;&lt;/div&gt;&lt;/div&gt;
-      &lt;nav aria-label=&quot;Inicio&quot;&gt;&lt;button type=&quot;button&quot; data-view=&quot;home&quot; class=&quot;ps-nav cursor-interaction&quot;&gt;&lt;i data-lucide=&quot;layout-dashboard&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; Inicio&lt;/button&gt;&lt;/nav&gt;
-      &lt;div class=&quot;ps-navlabel&quot;&gt;INVENTARIO&lt;/div&gt;
-      &lt;nav aria-label=&quot;Inventario&quot;&gt;
-        &lt;button type=&quot;button&quot; data-view=&quot;products&quot; class=&quot;ps-nav active cursor-interaction&quot;&gt;&lt;i data-lucide=&quot;package&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; Productos&lt;/button&gt;
-        &lt;button type=&quot;button&quot; data-view=&quot;stock&quot; class=&quot;ps-nav cursor-interaction&quot;&gt;&lt;i data-lucide=&quot;sliders-horizontal&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; Ajustar stock&lt;/button&gt;
-        &lt;button type=&quot;button&quot; data-view=&quot;movements&quot; class=&quot;ps-nav cursor-interaction&quot;&gt;&lt;i data-lucide=&quot;arrow-left-right&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; Movimientos&lt;/button&gt;
-      &lt;/nav&gt;
-      &lt;div class=&quot;ps-navlabel&quot;&gt;CLIENTES&lt;/div&gt;
-      &lt;nav aria-label=&quot;CRM&quot;&gt;
-        &lt;button type=&quot;button&quot; data-view=&quot;clients&quot; class=&quot;ps-nav cursor-interaction&quot;&gt;&lt;i data-lucide=&quot;users&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; Clientes&lt;/button&gt;
-        &lt;button type=&quot;button&quot; data-view=&quot;followups&quot; class=&quot;ps-nav cursor-interaction&quot;&gt;&lt;i data-lucide=&quot;calendar-check&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; Seguimientos&lt;/button&gt;
-      &lt;/nav&gt;
-      &lt;div class=&quot;ps-navlabel&quot;&gt;VENTAS&lt;/div&gt;
-      &lt;nav aria-label=&quot;Cotizaciones&quot;&gt;
-        &lt;button type=&quot;button&quot; data-view=&quot;quotations&quot; class=&quot;ps-nav cursor-interaction&quot;&gt;&lt;i data-lucide=&quot;file-text&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; Cotizaciones&lt;/button&gt;
-      &lt;/nav&gt;
-      &lt;div class=&quot;ps-navlabel&quot;&gt;ADMINISTRACIÓN&lt;/div&gt;
-      &lt;nav aria-label=&quot;Estadísticas&quot;&gt;&lt;button type=&quot;button&quot; data-view=&quot;statistics&quot; class=&quot;ps-nav cursor-interaction&quot;&gt;&lt;i data-lucide=&quot;chart-no-axes-combined&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; Gastos y utilidad&lt;/button&gt;&lt;/nav&gt;
-      &lt;nav aria-label=&quot;Reportes&quot;&gt;&lt;button type=&quot;button&quot; data-view=&quot;reports&quot; class=&quot;ps-nav cursor-interaction&quot;&gt;&lt;i data-lucide=&quot;chart-column&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; Reportes&lt;/button&gt;&lt;/nav&gt;
+      &lt;div class=&quot;ps-sidebar-head&quot;&gt;
+        &lt;div class=&quot;ps-brand&quot;&gt;&lt;span class=&quot;ps-brandmark&quot;&gt;P&lt;/span&gt;&lt;div&gt;Panel Shop&lt;small&gt;Administración&lt;/small&gt;&lt;/div&gt;&lt;/div&gt;
+        &lt;button type=&quot;button&quot; id=&quot;ps-menu-toggle&quot; class=&quot;ps-menu-toggle cursor-interaction&quot; aria-expanded=&quot;false&quot; aria-controls=&quot;ps-sidebar-groups&quot;&gt;&lt;i data-lucide=&quot;menu&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;i data-lucide=&quot;x&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;span&gt;Menú&lt;/span&gt;&lt;/button&gt;
+      &lt;/div&gt;
+      &lt;div id=&quot;ps-sidebar-groups&quot; class=&quot;ps-sidebar-groups&quot;&gt;
+        &lt;nav aria-label=&quot;Inicio&quot;&gt;&lt;button type=&quot;button&quot; data-view=&quot;home&quot; class=&quot;ps-nav cursor-interaction&quot;&gt;&lt;i data-lucide=&quot;layout-dashboard&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; Inicio&lt;/button&gt;&lt;/nav&gt;
+        &lt;div class=&quot;ps-navgroup&quot; data-nav-group=&quot;inventory&quot;&gt;
+          &lt;button type=&quot;button&quot; data-nav-toggle=&quot;inventory&quot; class=&quot;ps-navgroup-toggle cursor-interaction&quot; aria-expanded=&quot;false&quot; aria-controls=&quot;ps-nav-inventory&quot;&gt;&lt;span&gt;Inventario&lt;/span&gt;&lt;i data-lucide=&quot;chevron-down&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;/button&gt;
+          &lt;nav id=&quot;ps-nav-inventory&quot; class=&quot;ps-navgroup-items&quot; aria-label=&quot;Inventario&quot; hidden&gt;
+            &lt;button type=&quot;button&quot; data-view=&quot;products&quot; class=&quot;ps-nav active cursor-interaction&quot;&gt;&lt;i data-lucide=&quot;package&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; Productos&lt;/button&gt;
+            &lt;button type=&quot;button&quot; data-view=&quot;stock&quot; class=&quot;ps-nav cursor-interaction&quot;&gt;&lt;i data-lucide=&quot;sliders-horizontal&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; Ajustar stock&lt;/button&gt;
+            &lt;button type=&quot;button&quot; data-view=&quot;movements&quot; class=&quot;ps-nav cursor-interaction&quot;&gt;&lt;i data-lucide=&quot;arrow-left-right&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; Movimientos&lt;/button&gt;
+          &lt;/nav&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;ps-navgroup&quot; data-nav-group=&quot;clients&quot;&gt;
+          &lt;button type=&quot;button&quot; data-nav-toggle=&quot;clients&quot; class=&quot;ps-navgroup-toggle cursor-interaction&quot; aria-expanded=&quot;false&quot; aria-controls=&quot;ps-nav-clients&quot;&gt;&lt;span&gt;Clientes&lt;/span&gt;&lt;i data-lucide=&quot;chevron-down&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;/button&gt;
+          &lt;nav id=&quot;ps-nav-clients&quot; class=&quot;ps-navgroup-items&quot; aria-label=&quot;CRM&quot; hidden&gt;
+            &lt;button type=&quot;button&quot; data-view=&quot;clients&quot; class=&quot;ps-nav cursor-interaction&quot;&gt;&lt;i data-lucide=&quot;users&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; Clientes&lt;/button&gt;
+            &lt;button type=&quot;button&quot; data-view=&quot;followups&quot; class=&quot;ps-nav cursor-interaction&quot;&gt;&lt;i data-lucide=&quot;calendar-check&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; Seguimientos&lt;/button&gt;
+          &lt;/nav&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;ps-navgroup&quot; data-nav-group=&quot;sales&quot;&gt;
+          &lt;button type=&quot;button&quot; data-nav-toggle=&quot;sales&quot; class=&quot;ps-navgroup-toggle cursor-interaction&quot; aria-expanded=&quot;false&quot; aria-controls=&quot;ps-nav-sales&quot;&gt;&lt;span&gt;Ventas&lt;/span&gt;&lt;i data-lucide=&quot;chevron-down&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;/button&gt;
+          &lt;nav id=&quot;ps-nav-sales&quot; class=&quot;ps-navgroup-items&quot; aria-label=&quot;Cotizaciones&quot; hidden&gt;
+            &lt;button type=&quot;button&quot; data-view=&quot;quotations&quot; class=&quot;ps-nav cursor-interaction&quot;&gt;&lt;i data-lucide=&quot;file-text&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; Cotizaciones&lt;/button&gt;
+          &lt;/nav&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;ps-navgroup&quot; data-nav-group=&quot;admin&quot;&gt;
+          &lt;button type=&quot;button&quot; data-nav-toggle=&quot;admin&quot; class=&quot;ps-navgroup-toggle cursor-interaction&quot; aria-expanded=&quot;false&quot; aria-controls=&quot;ps-nav-admin&quot;&gt;&lt;span&gt;Administración&lt;/span&gt;&lt;i data-lucide=&quot;chevron-down&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;/button&gt;
+          &lt;nav id=&quot;ps-nav-admin&quot; class=&quot;ps-navgroup-items&quot; aria-label=&quot;Administración&quot; hidden&gt;
+            &lt;button type=&quot;button&quot; data-view=&quot;statistics&quot; class=&quot;ps-nav cursor-interaction&quot;&gt;&lt;i data-lucide=&quot;chart-no-axes-combined&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; Gastos y utilidad&lt;/button&gt;
+            &lt;button type=&quot;button&quot; data-view=&quot;reports&quot; class=&quot;ps-nav cursor-interaction&quot;&gt;&lt;i data-lucide=&quot;chart-column&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; Reportes&lt;/button&gt;
+          &lt;/nav&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
       &lt;div class=&quot;ps-sidebar-foot&quot;&gt;&lt;i data-lucide=&quot;store&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; Dos sucursales&lt;/div&gt;
     &lt;/aside&gt;
     &lt;main class=&quot;ps-main&quot;&gt;
       &lt;header class=&quot;ps-topbar&quot;&gt;
         &lt;label&gt;Sucursal &lt;select id=&quot;ps-branch&quot; class=&quot;cursor-interaction&quot;&gt;&lt;option value=&quot;all&quot;&gt;Todas las sucursales&lt;/option&gt;&lt;option value=&quot;A&quot;&gt;Sucursal A&lt;/option&gt;&lt;option value=&quot;B&quot;&gt;Sucursal B&lt;/option&gt;&lt;/select&gt;&lt;/label&gt;
-        &lt;button type=&quot;button&quot; id=&quot;ps-undo&quot; class=&quot;ps-button cursor-interaction&quot; disabled data-tooltip=&quot;No hay cambios para deshacer&quot;&gt;&lt;i data-lucide=&quot;undo-2&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; Deshacer &lt;span id=&quot;ps-undo-count&quot;&gt;&lt;/span&gt;&lt;/button&gt;
         &lt;div class=&quot;ps-user&quot;&gt;&lt;span class=&quot;ps-avatar&quot;&gt;AM&lt;/span&gt;&lt;span&gt;Ana Martínez&lt;small id=&quot;ps-role&quot;&gt;Administradora&lt;/small&gt;&lt;/span&gt;&lt;/div&gt;
       &lt;/header&gt;
       &lt;div class=&quot;ps-content&quot;&gt;
@@ -1982,7 +1996,6 @@ html&gt;body{padding:0}&lt;/style&gt;
 #panelshop-inventario .ps-feedback-actions{display:flex;align-items:center;gap:8px}
 #panelshop-inventario .ps-feedback small{font-size:11px;opacity:.8}
 #panelshop-inventario .ps-topbar{flex-wrap:wrap}
-#panelshop-inventario #ps-undo-count{font-size:11px;color:var(--ps-muted)}
 #panelshop-inventario .ps-row-actions{display:flex;align-items:center;justify-content:flex-end;gap:6px}
 #panelshop-inventario .ps-has-detail .ps-row-actions{flex-wrap:wrap}
 #panelshop-inventario .ps-row-actions .ps-button{font-size:11px;padding:7px 9px}
@@ -2338,6 +2351,22 @@ html:root{color-scheme:light!important}
 #panelshop-inventario .ps-nav:active{transform:scale(.98)}
 #panelshop-inventario .ps-nav:focus-visible{outline:2px solid var(--ps-sidepaper);outline-offset:-2px}
 #panelshop-inventario .ps-sidebar-foot{color:var(--ps-sideink)}
+#panelshop-inventario .ps-sidebar-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:20px}
+#panelshop-inventario .ps-sidebar-head .ps-brand{margin:0}
+#panelshop-inventario .ps-menu-toggle{display:none}
+#panelshop-inventario .ps-sidebar-groups{display:flex;flex-direction:column;gap:4px}
+#panelshop-inventario .ps-sidebar nav{display:grid;gap:4px;margin:0}
+#panelshop-inventario .ps-navgroup{display:grid;gap:4px;margin-top:8px}
+#panelshop-inventario .ps-navgroup-toggle{display:flex;align-items:center;gap:8px;width:100%;min-height:36px;padding:8px 12px;border:0;border-radius:7px;background:transparent;color:var(--ps-sidepaper);font-size:11px;font-weight:500;letter-spacing:.8px;text-transform:uppercase;text-align:left;transition:background-color 150ms ease,transform 160ms var(--ps-ease-out)}
+#panelshop-inventario .ps-navgroup-toggle&gt;span{flex:1;opacity:.55;transition:opacity 150ms ease}
+#panelshop-inventario .ps-navgroup-toggle svg{width:14px;height:14px;opacity:.55;transition:transform 150ms var(--ps-ease-out),opacity 150ms ease}
+#panelshop-inventario .ps-navgroup-toggle[aria-expanded=true]&gt;span,#panelshop-inventario .ps-navgroup-toggle[aria-expanded=true] svg,#panelshop-inventario .ps-navgroup[data-has-active] .ps-navgroup-toggle&gt;span{opacity:1}
+#panelshop-inventario .ps-navgroup-toggle[aria-expanded=true] svg{transform:rotate(180deg)}
+#panelshop-inventario .ps-navgroup[data-has-active] .ps-navgroup-toggle[aria-expanded=false]::before{content:&quot;&quot;;flex-shrink:0;width:6px;height:6px;border-radius:50%;background:var(--ps-sidepaper)}
+#panelshop-inventario .ps-navgroup-toggle:active,#panelshop-inventario .ps-menu-toggle:active{transform:scale(.98)}
+#panelshop-inventario .ps-navgroup-toggle:focus-visible,#panelshop-inventario .ps-menu-toggle:focus-visible{outline:2px solid var(--ps-sidepaper);outline-offset:-2px}
+#panelshop-inventario .ps-navgroup-items{padding-left:8px;transition:opacity 150ms var(--ps-ease-out),transform 150ms var(--ps-ease-out)}
+@starting-style{#panelshop-inventario .ps-navgroup-items{opacity:0;transform:translateY(-2px)}}
 #panelshop-inventario .ps-button{transition:background-color 150ms ease,border-color 150ms ease,color 150ms ease,transform 160ms var(--ps-ease-out)}
 #panelshop-inventario .ps-button:hover:not(:disabled){background:var(--ps-surface);border-color:var(--ps-line)}
 #panelshop-inventario .ps-button.ps-primary:hover:not(:disabled){background:var(--ps-teal);border-color:var(--ps-teal);filter:none}
@@ -2428,6 +2457,8 @@ html:root{color-scheme:light!important}
 
 @media (hover:hover) and (pointer:fine){
 #panelshop-inventario .ps-nav:not(.active):hover{background:var(--ps-navhover);color:var(--ps-sidepaper)}
+#panelshop-inventario .ps-navgroup-toggle:hover,#panelshop-inventario .ps-menu-toggle:hover{background:var(--ps-navhover)}
+#panelshop-inventario .ps-navgroup-toggle:hover&gt;span,#panelshop-inventario .ps-navgroup-toggle:hover svg{opacity:1}
 #panelshop-inventario .ps-button:hover:not(:disabled){background:var(--ps-soft);border-color:var(--ps-ink)}
 #panelshop-inventario .ps-button.ps-primary:hover:not(:disabled){background:#262626;border-color:#262626}
 #panelshop-inventario .ps-notification .ps-button:hover:not(:disabled){background:var(--ps-ink);color:#fff}
@@ -2439,6 +2470,19 @@ html:root{color-scheme:light!important}
 #panelshop-inventario .ps-shortcut:hover:not(.ps-shortcut-primary){border-color:var(--ps-ink)}
 #panelshop-inventario .ps-shortcut.ps-shortcut-primary:hover{background:#262626}
 #panelshop-inventario .ps-notice-filters button[aria-pressed=false]:hover{border-color:var(--ps-ink);color:var(--ps-ink)}
+}
+@media (max-width:730px){
+#panelshop-inventario .ps-sidebar{flex-direction:column;align-items:stretch;flex-wrap:nowrap;justify-content:flex-start;gap:0;padding:12px 16px}
+#panelshop-inventario .ps-sidebar-head{margin-bottom:0}
+#panelshop-inventario .ps-menu-toggle{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:8px 14px;border:1px solid color-mix(in srgb,#F4F3FC 18%,transparent);border-radius:8px;background:transparent;color:var(--ps-sidepaper);font-size:13px;font-weight:500;transition:background-color 150ms ease,transform 160ms var(--ps-ease-out)}
+#panelshop-inventario .ps-menu-toggle .lucide-x,#panelshop-inventario .ps-sidebar[data-menu-open] .ps-menu-toggle .lucide-menu{display:none}
+#panelshop-inventario .ps-sidebar[data-menu-open] .ps-menu-toggle .lucide-x{display:block}
+#panelshop-inventario .ps-sidebar-groups{display:none;padding-top:12px}
+#panelshop-inventario .ps-sidebar[data-menu-open] .ps-sidebar-groups{display:flex;transition:opacity 150ms ease}
+@starting-style{#panelshop-inventario .ps-sidebar[data-menu-open] .ps-sidebar-groups{opacity:0}}
+#panelshop-inventario .ps-sidebar nav{display:grid;width:auto;flex-wrap:nowrap}
+#panelshop-inventario .ps-navgroup-toggle,#panelshop-inventario .ps-nav{min-height:44px}
+#panelshop-inventario .ps-nav{font-size:13px;padding:11px 12px}
 }
 @media (max-width:950px) and (min-width:601px){
 #panelshop-inventario .ps-mini{grid-template-columns:minmax(0,1fr)}
@@ -2454,7 +2498,8 @@ html:root{color-scheme:light!important}
 @media (prefers-reduced-motion:reduce){
 #panelshop-inventario .ps-drawer{transform:none!important;opacity:0;transition:opacity 200ms ease!important}
 #panelshop-inventario[data-detail-open] .ps-drawer{opacity:1}
-#panelshop-inventario .ps-button:active,#panelshop-inventario .ps-nav:active,#panelshop-inventario .ps-shortcut:active,#panelshop-inventario button.ps-mini:active,#panelshop-inventario .ps-drawer-close:active,#panelshop-inventario .ps-notice-filters button:active,#panelshop-inventario .ps-metric-link:hover svg,#panelshop-inventario .ps-shortcut:hover&gt;svg:last-child{transform:none!important}
+#panelshop-inventario .ps-navgroup-items{transform:none!important}
+#panelshop-inventario .ps-navgroup-toggle:active,#panelshop-inventario .ps-menu-toggle:active,#panelshop-inventario .ps-button:active,#panelshop-inventario .ps-nav:active,#panelshop-inventario .ps-shortcut:active,#panelshop-inventario button.ps-mini:active,#panelshop-inventario .ps-drawer-close:active,#panelshop-inventario .ps-notice-filters button:active,#panelshop-inventario .ps-metric-link:hover svg,#panelshop-inventario .ps-shortcut:hover&gt;svg:last-child{transform:none!important}
 }
 &lt;/style&gt;
 &lt;script&gt;
@@ -2524,6 +2569,16 @@ let clients=seedClients.slice(),tasks=seedTasks.slice(),quotes=seedQuotes.slice(
 let draft={client:&#x27;c1&#x27;,summary:&#x27;Remodelación de recibidor&#x27;,advisor:&#x27;Ana Martínez&#x27;,validity:15,notes:&#x27;Confirmar medidas antes de programar la instalación.&#x27;,discount:0,tax:0,items:[{key:&#x27;i1&#x27;,product:&#x27;p1&#x27;,qty:2,price:3800,branch:&#x27;A&#x27;},{key:&#x27;i2&#x27;,product:&#x27;p2&#x27;,qty:4,price:890,branch:&#x27;B&#x27;}],charges:[{key:&#x27;g1&#x27;,type:&#x27;Mano de obra&#x27;,name:&#x27;Instalación de puertas&#x27;,qty:2,price:600},{key:&#x27;g2&#x27;,type:&#x27;Gasto extra&#x27;,name:&#x27;Gasolina y traslado&#x27;,qty:1,price:350}]};
 let quotationTab=&#x27;compose&#x27;,catalogOpen=false,connectionOnline=true;
 let homeNoticeFilter=&#x27;all&#x27;,showAllNotices=false,detailRef=null,detailTrigger=null,detailHideTimer=null;
+let openNavGroup=null,lastNavView=null;
+const navGroupOf={products:&#x27;inventory&#x27;,stock:&#x27;inventory&#x27;,movements:&#x27;inventory&#x27;,clients:&#x27;clients&#x27;,followups:&#x27;clients&#x27;,quotations:&#x27;sales&#x27;,statistics:&#x27;admin&#x27;,reports:&#x27;admin&#x27;};
+function applyNav(){
+  if(view!==lastNavView){openNavGroup=navGroupOf[view]??openNavGroup;lastNavView=view;}
+  root.querySelectorAll(&#x27;.ps-navgroup&#x27;).forEach(group=&gt;{const key=group.dataset.navGroup,items=group.querySelector(&#x27;.ps-navgroup-items&#x27;),open=openNavGroup===key;
+    group.hidden=[...items.querySelectorAll(&#x27;[data-view]&#x27;)].every(b=&gt;b.hidden);
+    group.querySelector(&#x27;[data-nav-toggle]&#x27;).setAttribute(&#x27;aria-expanded&#x27;,open);items.hidden=!open;
+    group.toggleAttribute(&#x27;data-has-active&#x27;,navGroupOf[view]===key);});
+}
+function setMenuOpen(open){root.querySelector(&#x27;.ps-sidebar&#x27;).toggleAttribute(&#x27;data-menu-open&#x27;,open);$(&#x27;ps-menu-toggle&#x27;).setAttribute(&#x27;aria-expanded&#x27;,open);}
 const design={compact:false,role:&#x27;admin&#x27;};
 const undoStack=[];
 let notificationTimer=null,lastToastText=&#x27;&#x27;,toastVersion=0,editSequence=0,activeEditToken=&#x27;&#x27;;
@@ -2533,26 +2588,26 @@ function remember(){if(window.openai&amp;&amp;window.openai.setWidgetState){cons
 function icons(){if(globalThis.lucide)lucide.createIcons({attrs:{width:18,height:18}});}
 function classification(p){const b=branch===&#x27;all&#x27;?[&#x27;A&#x27;,&#x27;B&#x27;]:[branch];return b.some(x=&gt;p.stock[x]===0)?&#x27;zero&#x27;:b.some(x=&gt;p.stock[x]&lt;p.min)?&#x27;low&#x27;:&#x27;ok&#x27;;}
 function stateChip(p,b){const n=p.stock[b],cls=n===0?&#x27;zero&#x27;:n&lt;p.min?&#x27;low&#x27;:&#x27;&#x27;;return &#x27;&lt;span class=&quot;ps-chip &#x27;+cls+&#x27;&quot;&gt;&#x27;+(branch===&#x27;all&#x27;?b+&#x27; · &#x27;:&#x27;&#x27;)+n+(branch===&#x27;all&#x27;?&#x27;&#x27;:&#x27; pzas.&#x27;)+&#x27;&lt;/span&gt;&#x27;;}
-function scheduleNotification(){clearTimeout(notificationTimer);notificationTimer=setTimeout(()=&gt;{$(&#x27;ps-feedback&#x27;).hidden=true;},8000);}
+function scheduleNotification(){clearTimeout(notificationTimer);const box=$(&#x27;ps-feedback&#x27;);if(box.matches(&#x27;:hover&#x27;)||box.contains(document.activeElement))return;notificationTimer=setTimeout(()=&gt;{$(&#x27;ps-feedback&#x27;).hidden=true;},8000);}
+[&#x27;pointerenter&#x27;,&#x27;focusin&#x27;].forEach(type=&gt;$(&#x27;ps-feedback&#x27;).addEventListener(type,()=&gt;clearTimeout(notificationTimer)));[&#x27;pointerleave&#x27;,&#x27;focusout&#x27;].forEach(type=&gt;$(&#x27;ps-feedback&#x27;).addEventListener(type,()=&gt;setTimeout(scheduleNotification,0)));
 function toast(text,withUndo=false){lastToastText=text;toastVersion++;$(&#x27;ps-feedback&#x27;).innerHTML=&#x27;&lt;span&gt;&#x27;+esc(text)+&#x27;&lt;/span&gt;&lt;div class=&quot;ps-feedback-actions&quot;&gt;&#x27;+(withUndo?&#x27;&lt;button type=&quot;button&quot; data-undo-action class=&quot;ps-button cursor-interaction&quot;&gt;&lt;i data-lucide=&quot;undo-2&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; Deshacer&lt;/button&gt;&#x27;:&#x27;&#x27;)+&#x27;&lt;button type=&quot;button&quot; data-dismiss-notice class=&quot;ps-icon-button cursor-interaction&quot; aria-label=&quot;Cerrar aviso&quot;&gt;&lt;i data-lucide=&quot;x&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;/button&gt;&lt;/div&gt;&#x27;;$(&#x27;ps-feedback&#x27;).hidden=false;scheduleNotification();icons();}
 function captureState(){return {data:JSON.parse(JSON.stringify({products,logs,clients,tasks,quotes,notes,draft})),ui:{homeNoticeFilter,showAllNotices,branch,filter,view,selected,selectedClient,profileTab,taskFilter,quotationTab,catalogOpen,connectionOnline,statsState:JSON.parse(JSON.stringify(statsState)),reportState:JSON.parse(JSON.stringify(reportState)),catalogueSearch:$(&#x27;ps-catalogue-search&#x27;).value,search:$(&#x27;ps-search&#x27;).value,category:$(&#x27;ps-category&#x27;).value,clientSearch:$(&#x27;ps-client-search&#x27;).value,clientFilter:$(&#x27;ps-client-filter&#x27;).value},role:design.role};}
-function updateUndoButton(){const last=undoStack.at(-1),allowed=last&amp;&amp;(last.role===design.role||design.role===&#x27;admin&#x27;);$(&#x27;ps-undo&#x27;).disabled=!allowed;$(&#x27;ps-undo-count&#x27;).textContent=undoStack.length?&#x27;(&#x27;+undoStack.length+&#x27;)&#x27;:&#x27;&#x27;;$(&#x27;ps-undo&#x27;).setAttribute(&#x27;data-tooltip&#x27;,last?(allowed?&#x27;Deshacer: &#x27;+last.label:&#x27;Esta acción requiere permisos de administración&#x27;):&#x27;No hay cambios para deshacer&#x27;);$(&#x27;ps-undo&#x27;).setAttribute(&#x27;aria-label&#x27;,last?&#x27;Deshacer: &#x27;+last.label:&#x27;Deshacer última acción&#x27;);}
 function undoAction(){const entry=undoStack.at(-1);if(!entry||(entry.role!==design.role&amp;&amp;design.role!==&#x27;admin&#x27;))return;undoStack.pop();const currentProducts=JSON.parse(JSON.stringify(products)),currentLogs=JSON.parse(JSON.stringify(logs)),s=entry.snapshot.data,u=entry.snapshot.ui;
 products=s.products;logs=currentLogs;clients=s.clients;tasks=s.tasks;quotes=s.quotes;notes=s.notes;draft=s.draft;
 products.forEach(p=&gt;{const before=currentProducts.find(x=&gt;x.id===p.id);if(!before)return;[&#x27;A&#x27;,&#x27;B&#x27;].forEach(b=&gt;{const delta=p.stock[b]-before.stock[b];if(delta)logs.unshift({product:p.id,name:p.name,branch:b,type:&#x27;Reversión&#x27;,delta,before:before.stock[b],after:p.stock[b],reason:&#x27;Deshacer: &#x27;+entry.label,when:&#x27;Ahora&#x27;,user:&#x27;Ana Martínez&#x27;});});});
-homeNoticeFilter=u.homeNoticeFilter||&#x27;all&#x27;;showAllNotices=u.showAllNotices===true;branch=u.branch;filter=u.filter;view=u.view;selected=u.selected;selectedClient=u.selectedClient;profileTab=u.profileTab;taskFilter=u.taskFilter;quotationTab=u.quotationTab;catalogOpen=u.catalogOpen;connectionOnline=u.connectionOnline;Object.assign(statsState,u.statsState);Object.assign(reportState,u.reportState);$(&#x27;ps-catalogue-search&#x27;).value=u.catalogueSearch||&#x27;&#x27;;$(&#x27;ps-search&#x27;).value=u.search;$(&#x27;ps-category&#x27;).value=u.category;$(&#x27;ps-client-search&#x27;).value=u.clientSearch;$(&#x27;ps-client-filter&#x27;).value=u.clientFilter;closeEditor();$(&#x27;ps-document-preview&#x27;).hidden=true;render();toast(&#x27;Se deshizo: &#x27;+entry.label+&#x27;.&#x27;);remember();updateUndoButton();}
+homeNoticeFilter=u.homeNoticeFilter||&#x27;all&#x27;;showAllNotices=u.showAllNotices===true;branch=u.branch;filter=u.filter;view=u.view;selected=u.selected;selectedClient=u.selectedClient;profileTab=u.profileTab;taskFilter=u.taskFilter;quotationTab=u.quotationTab;catalogOpen=u.catalogOpen;connectionOnline=u.connectionOnline;Object.assign(statsState,u.statsState);Object.assign(reportState,u.reportState);$(&#x27;ps-catalogue-search&#x27;).value=u.catalogueSearch||&#x27;&#x27;;$(&#x27;ps-search&#x27;).value=u.search;$(&#x27;ps-category&#x27;).value=u.category;$(&#x27;ps-client-search&#x27;).value=u.clientSearch;$(&#x27;ps-client-filter&#x27;).value=u.clientFilter;closeEditor();$(&#x27;ps-document-preview&#x27;).hidden=true;render();toast(&#x27;Se deshizo: &#x27;+entry.label+&#x27;.&#x27;);remember();}
 function render(){
 if(design.role!==&#x27;admin&#x27;&amp;&amp;[&#x27;statistics&#x27;,&#x27;reports&#x27;].includes(view))view=&#x27;home&#x27;;[&#x27;statistics&#x27;,&#x27;reports&#x27;].forEach(v=&gt;root.querySelector(&#x27;[data-view=&quot;&#x27;+v+&#x27;&quot;]&#x27;).hidden=design.role!==&#x27;admin&#x27;);
 const crm=view===&#x27;clients&#x27;||view===&#x27;followups&#x27;;root.classList.toggle(&#x27;ps-compact&#x27;,design.compact);closeDetail(false);$(&#x27;ps-role&#x27;).textContent=design.role===&#x27;admin&#x27;?&#x27;Administradora&#x27;:&#x27;Asesora de ventas&#x27;;$(&#x27;ps-management&#x27;).hidden=design.role!==&#x27;admin&#x27;||![&#x27;products&#x27;,&#x27;stock&#x27;,&#x27;movements&#x27;].includes(view);$(&#x27;ps-open-add&#x27;).hidden=view!==&#x27;products&#x27;;$(&#x27;ps-open-add&#x27;).lastChild.textContent=&#x27; Nuevo producto&#x27;;$(&#x27;ps-open-restock&#x27;).classList.toggle(&#x27;ps-primary&#x27;,view===&#x27;stock&#x27;||view===&#x27;movements&#x27;);$(&#x27;ps-open-restock&#x27;).hidden=view===&#x27;products&#x27;;$(&#x27;ps-open-move&#x27;).hidden=view===&#x27;products&#x27;;$(&#x27;ps-crm-actions&#x27;).hidden=!crm;$(&#x27;ps-branch&#x27;).value=branch;
 const titles={home:[&#x27;Panel principal&#x27;,&#x27;Cotiza, consulta existencias y atiende los pendientes de hoy&#x27;],products:[&#x27;Productos&#x27;,&#x27;Registra y edita las fichas del catálogo. Las existencias se gestionan en Ajustar stock.&#x27;],stock:[&#x27;Ajustar stock&#x27;,&#x27;Agrega mercancía recibida o corrige el conteo de un producto registrado&#x27;],movements:[&#x27;Movimientos&#x27;,&#x27;Entradas y ajustes con responsable y motivo&#x27;],clients:[&#x27;Clientes&#x27;,&#x27;Cotizaciones, historial y próximos contactos en un solo lugar&#x27;],followups:[&#x27;Seguimientos&#x27;,&#x27;Los pendientes de cada cliente y quién les da seguimiento&#x27;],quotations:[&#x27;Cotizaciones&#x27;,&#x27;Del catálogo a una propuesta para el cliente&#x27;],statistics:[&#x27;Gastos y utilidad&#x27;,&#x27;Identifica en qué se gasta y cuánto queda de cada venta&#x27;],reports:[&#x27;Reportes&#x27;,&#x27;Ventas, márgenes y comportamiento de compra&#x27;]};$(&#x27;ps-section-label&#x27;).textContent=crm?&#x27;CRM&#x27;:[&#x27;statistics&#x27;,&#x27;reports&#x27;].includes(view)?&#x27;Administración&#x27;:view===&#x27;home&#x27;?&#x27;Inicio&#x27;:view===&#x27;quotations&#x27;?&#x27;Ventas&#x27;:&#x27;Inventario&#x27;;$(&#x27;ps-title&#x27;).textContent=titles[view][0];$(&#x27;ps-subtitle&#x27;).textContent=titles[view][1];$(&#x27;ps-section-label&#x27;).hidden=view===&#x27;home&#x27;;$(&#x27;ps-subtitle&#x27;).hidden=view===&#x27;home&#x27;;
-[&#x27;home&#x27;,&#x27;products&#x27;,&#x27;stock&#x27;,&#x27;movements&#x27;,&#x27;clients&#x27;,&#x27;followups&#x27;,&#x27;quotations&#x27;,&#x27;statistics&#x27;,&#x27;reports&#x27;].forEach(v=&gt;$(&#x27;ps-&#x27;+v+&#x27;-view&#x27;).hidden=view!==v);root.querySelectorAll(&#x27;[data-view]&#x27;).forEach(b=&gt;{b.classList.toggle(&#x27;active&#x27;,b.dataset.view===view);b.setAttribute(&#x27;aria-current&#x27;,b.dataset.view===view?&#x27;page&#x27;:&#x27;false&#x27;);});
+[&#x27;home&#x27;,&#x27;products&#x27;,&#x27;stock&#x27;,&#x27;movements&#x27;,&#x27;clients&#x27;,&#x27;followups&#x27;,&#x27;quotations&#x27;,&#x27;statistics&#x27;,&#x27;reports&#x27;].forEach(v=&gt;$(&#x27;ps-&#x27;+v+&#x27;-view&#x27;).hidden=view!==v);root.querySelectorAll(&#x27;[data-view]&#x27;).forEach(b=&gt;{b.classList.toggle(&#x27;active&#x27;,b.dataset.view===view);b.setAttribute(&#x27;aria-current&#x27;,b.dataset.view===view?&#x27;page&#x27;:&#x27;false&#x27;);});applyNav();
 const q=$(&#x27;ps-search&#x27;).value.trim().toLocaleLowerCase(&#x27;es&#x27;);const cat=$(&#x27;ps-category&#x27;).value;const base=products.filter(p=&gt;(cat===&#x27;all&#x27;||p.category===cat)&amp;&amp;(!q||[p.name,p.sku,p.supplier].join(&#x27; &#x27;).toLocaleLowerCase(&#x27;es&#x27;).includes(q)));
 $(&#x27;ps-count-all&#x27;).textContent=base.length;$(&#x27;ps-count-low&#x27;).textContent=base.filter(p=&gt;classification(p)===&#x27;low&#x27;||classification(p)===&#x27;zero&#x27;).length;$(&#x27;ps-count-zero&#x27;).textContent=base.filter(p=&gt;classification(p)===&#x27;zero&#x27;).length;
 const visible=base.filter(p=&gt;filter===&#x27;all&#x27;||(filter===&#x27;low&#x27;?classification(p)!==&#x27;ok&#x27;:classification(p)===&#x27;zero&#x27;));
 $(&#x27;ps-count&#x27;).textContent=visible.length+&#x27; de &#x27;+products.length+&#x27; productos&#x27;;$(&#x27;ps-stock-heading&#x27;).textContent=branch===&#x27;all&#x27;?&#x27;Existencias por sucursal&#x27;:&#x27;Existencias · Sucursal &#x27;+branch;
 root.querySelectorAll(&#x27;[data-stock]&#x27;).forEach(b=&gt;b.setAttribute(&#x27;aria-pressed&#x27;,String(b.dataset.stock===filter)));
 $(&#x27;ps-products&#x27;).innerHTML=visible.map(p=&gt;&#x27;&lt;tr class=&quot;&#x27;+(p.id===selected?&#x27;ps-selected&#x27;:&#x27;&#x27;)+&#x27;&quot;&gt;&lt;td&gt;&lt;div class=&quot;ps-product-cell&quot;&gt;&lt;span class=&quot;ps-thumb&quot;&gt;&lt;i data-lucide=&quot;&#x27;+p.icon+&#x27;&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;/span&gt;&lt;button class=&quot;ps-product-link cursor-interaction&quot; type=&quot;button&quot; data-product=&quot;&#x27;+p.id+&#x27;&quot;&gt;&#x27;+esc(p.name)+&#x27;&lt;small&gt;&#x27;+esc(p.sku)+&#x27; · &#x27;+esc(p.category)+&#x27;&lt;/small&gt;&lt;/button&gt;&lt;/div&gt;&lt;/td&gt;&lt;td data-label=&quot;Existencias&quot;&gt;&lt;div class=&quot;ps-stock&quot;&gt;&#x27;+(branch===&#x27;all&#x27;?[&#x27;A&#x27;,&#x27;B&#x27;]:[branch]).map(b=&gt;stateChip(p,b)).join(&#x27;&#x27;)+&#x27;&lt;/div&gt;&lt;span class=&quot;ps-stock-note&quot;&gt;&#x27;+(classification(p)===&#x27;zero&#x27;?&#x27;Sin existencias&#x27;+(branch===&#x27;all&#x27;?&#x27; en una sucursal&#x27;:&#x27;&#x27;):classification(p)===&#x27;low&#x27;?&#x27;Por debajo del mínimo&#x27;:&#x27;Disponible&#x27;)+&#x27;&lt;/span&gt;&lt;/td&gt;&lt;td class=&quot;ps-number&quot; data-label=&quot;Mínimo&quot;&gt;&#x27;+p.min+&#x27; pzas.&lt;/td&gt;&lt;td&gt;&lt;div class=&quot;ps-row-actions&quot;&gt;&#x27;+(design.role===&#x27;admin&#x27;?&#x27;&lt;button type=&quot;button&quot; class=&quot;ps-button cursor-interaction&quot; data-restock=&quot;&#x27;+p.id+&#x27;&quot;&gt;&lt;i data-lucide=&quot;package-plus&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; Agregar stock&lt;/button&gt;&#x27;:&#x27;&#x27;)+&#x27;&lt;button type=&quot;button&quot; class=&quot;ps-button cursor-interaction&quot; data-product=&quot;&#x27;+p.id+&#x27;&quot; aria-label=&quot;Ver detalle de &#x27;+esc(p.name)+&#x27;&quot;&gt;Detalle&lt;/button&gt;&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&#x27;).join(&#x27;&#x27;);
-$(&#x27;ps-empty&#x27;).hidden=visible.length&gt;0;$(&#x27;ps-workspace&#x27;).classList.toggle(&#x27;ps-has-detail&#x27;,!!selected);renderDetail();renderHistory();renderClients();renderTasks();renderQuotation();renderStatistics();renderCatalogue();renderHome();renderReports();updateUndoButton();icons();
+$(&#x27;ps-empty&#x27;).hidden=visible.length&gt;0;$(&#x27;ps-workspace&#x27;).classList.toggle(&#x27;ps-has-detail&#x27;,!!selected);renderDetail();renderHistory();renderClients();renderTasks();renderQuotation();renderStatistics();renderCatalogue();renderHome();renderReports();icons();
 }
 function renderDetail(){const p=products.find(x=&gt;x.id===selected);$(&#x27;ps-detail&#x27;).hidden=!p;if(!p)return;
 const recent=logs.filter(l=&gt;l.product===p.id).slice(0,3);
@@ -2867,6 +2922,8 @@ root.addEventListener(&#x27;keydown&#x27;,e=&gt;{if(!detailRef)return;if(e.key==
 root.addEventListener(&#x27;click&#x27;,e=&gt;{if(e.target.id===&#x27;ps-drawer-backdrop&#x27;){closeDetail();return;}const btn=e.target.closest(&#x27;button&#x27;);if(!btn)return;
 if(btn.dataset.detail){openDetail(btn.dataset.detail,btn);return;}
 if(btn.hasAttribute(&#x27;data-close-detail&#x27;)){closeDetail();return;}
+if(btn.dataset.navToggle){openNavGroup=openNavGroup===btn.dataset.navToggle?null:btn.dataset.navToggle;applyNav();return;}
+if(btn.id===&#x27;ps-menu-toggle&#x27;){setMenuOpen(!root.querySelector(&#x27;.ps-sidebar&#x27;).hasAttribute(&#x27;data-menu-open&#x27;));return;}
 if(btn.hasAttribute(&#x27;data-start-quote&#x27;))startQuotation();
 else if(btn.hasAttribute(&#x27;data-home-add-product&#x27;))openProduct();
 else if(btn.hasAttribute(&#x27;data-home-add-client&#x27;)){view=&#x27;clients&#x27;;closeEditor();render();openClient();}
@@ -2877,7 +2934,7 @@ else if(btn.dataset.noticeStock){view=&#x27;stock&#x27;;branch=btn.dataset.notic
 else if(btn.dataset.reportDetail){reportState.detail=btn.dataset.reportDetail;renderReports();icons();remember();}
 else if(btn.hasAttribute(&#x27;data-close-report&#x27;)){reportState.detail=null;renderReports();icons();remember();}
 else if(btn.dataset.clientMeasure){reportState.clientMeasure=btn.dataset.clientMeasure;renderReports();remember();}
-else if(btn.dataset.view){view=btn.dataset.view;closeEditor();$(&#x27;ps-feedback&#x27;).hidden=true;$(&#x27;ps-document-preview&#x27;).hidden=true;render();remember();}
+else if(btn.dataset.view){setMenuOpen(false);view=btn.dataset.view;closeEditor();$(&#x27;ps-feedback&#x27;).hidden=true;$(&#x27;ps-document-preview&#x27;).hidden=true;render();remember();}
 else if(btn.dataset.stock){filter=btn.dataset.stock;render();remember();}
 else if(btn.dataset.product){selected=btn.dataset.product;render();remember();}
 else if(btn.hasAttribute(&#x27;data-close-detail&#x27;)){selected=null;render();remember();}
@@ -2885,7 +2942,7 @@ else if(btn.hasAttribute(&#x27;data-close-editor&#x27;))closeEditor();
 else if(btn.dataset.edit)openProduct(btn.dataset.edit);
 else if(btn.dataset.move)openMove(btn.dataset.move);
 else if(btn.dataset.restock)openRestock(btn.dataset.restock);
-else if(btn.id===&#x27;ps-undo&#x27;||btn.hasAttribute(&#x27;data-undo-action&#x27;))undoAction();
+else if(btn.hasAttribute(&#x27;data-undo-action&#x27;))undoAction();
 else if(btn.hasAttribute(&#x27;data-dismiss-notice&#x27;)){$(&#x27;ps-feedback&#x27;).hidden=true;clearTimeout(notificationTimer);}
 else if(btn.dataset.client){selectedClient=btn.dataset.client;profileTab=&#x27;summary&#x27;;closeEditor();render();remember();}
 else if(btn.dataset.openClient){const c=clients.find(x=&gt;x.id===btn.dataset.openClient);selectedClient=c.id;view=&#x27;clients&#x27;;profileTab=&#x27;summary&#x27;;branch=&#x27;all&#x27;;$(&#x27;ps-client-search&#x27;).value=&#x27;&#x27;;$(&#x27;ps-client-filter&#x27;).value=&#x27;all&#x27;;closeEditor();render();remember();}
@@ -2937,8 +2994,8 @@ function actionLabel(e){const el=e.target,btn=el.closest?.(&#x27;button&#x27;);i
 if(el.dataset.itemField)return {qty:&#x27;Cambiar cantidad del producto&#x27;,price:&#x27;Cambiar precio del producto&#x27;,branch:&#x27;Cambiar sucursal de origen&#x27;}[el.dataset.itemField];if(el.dataset.chargeField)return {name:&#x27;Cambiar descripción del trabajo&#x27;,scope:&#x27;Cambiar alcance del trabajo&#x27;,type:&#x27;Cambiar tipo de concepto&#x27;,mode:&#x27;Cambiar forma de cobro&#x27;,qty:&#x27;Cambiar cantidad del concepto&#x27;,price:&#x27;Cambiar precio acordado&#x27;,amount:&#x27;Cambiar importe del trabajo&#x27;}[el.dataset.chargeField];if(isDraftControl(el))return &#x27;Actualizar datos de la cotización&#x27;;
 if(el.id?.startsWith(&#x27;ps-loyalty-&#x27;))return &#x27;Cambiar descuento por historial&#x27;;if(btn?.hasAttribute(&#x27;data-start-quote&#x27;))return &#x27;Iniciar nueva cotización&#x27;;if(btn?.dataset.removeItem)return &#x27;Quitar producto de la cotización&#x27;;if(btn?.dataset.removeCharge)return &#x27;Quitar concepto de la cotización&#x27;;if(btn?.dataset.addQuoteProduct)return &#x27;Agregar producto a la cotización&#x27;;if(btn?.dataset.completeTask)return &#x27;Marcar seguimiento realizado&#x27;;if(btn?.dataset.deleteQuotation)return &#x27;Eliminar cotización&#x27;;if(btn?.dataset.loadQuotation)return &#x27;Cargar cotización para editar&#x27;;return {&#x27;ps-add-charge&#x27;:&#x27;Agregar concepto a la cotización&#x27;,&#x27;ps-save-quotation&#x27;:&#x27;Guardar cotización&#x27;,&#x27;ps-save-draft&#x27;:&#x27;Guardar borrador&#x27;,&#x27;ps-new-quotation&#x27;:&#x27;Iniciar nueva cotización&#x27;}[btn?.id]||&#x27;Actualizar datos&#x27;;}
 root.addEventListener(&#x27;focusin&#x27;,e=&gt;{if(isDraftControl(e.target)){activeEditToken=&#x27;edit-&#x27;+(++editSequence);e.target.dataset.undoGroup=activeEditToken;}});
-function beginTransaction(e){const el=e.target,btn=el.closest?.(&#x27;button&#x27;);if(e.type===&#x27;click&#x27;){if(!btn||btn.id===&#x27;ps-undo&#x27;||btn.hasAttribute(&#x27;data-undo-action&#x27;)||btn.hasAttribute(&#x27;data-dismiss-notice&#x27;))return;}else if(e.type!==&#x27;submit&#x27;&amp;&amp;!isDraftControl(el))return;const group=e.type===&#x27;input&#x27;||e.type===&#x27;change&#x27;?(el.dataset.undoGroup||&#x27;edit-&#x27;+(++editSequence)):null;editTransactions.set(e,{snapshot:captureState(),label:actionLabel(e),group,toastVersion});}
-function finishTransaction(e){const frame=editTransactions.get(e);if(!frame)return;const changed=JSON.stringify(frame.snapshot.data)!==JSON.stringify(captureState().data),last=undoStack.at(-1);if(changed){if(!frame.group||last?.group!==frame.group){undoStack.push({snapshot:frame.snapshot,label:frame.label,group:frame.group,role:design.role});if(undoStack.length&gt;20)undoStack.shift();}updateUndoButton();if(e.type!==&#x27;input&#x27;)toast(toastVersion!==frame.toastVersion?lastToastText:frame.label+&#x27;.&#x27;,true);}
+function beginTransaction(e){const el=e.target,btn=el.closest?.(&#x27;button&#x27;);if(e.type===&#x27;click&#x27;){if(!btn||btn.hasAttribute(&#x27;data-undo-action&#x27;)||btn.hasAttribute(&#x27;data-dismiss-notice&#x27;))return;}else if(e.type!==&#x27;submit&#x27;&amp;&amp;!isDraftControl(el))return;const group=e.type===&#x27;input&#x27;||e.type===&#x27;change&#x27;?(el.dataset.undoGroup||&#x27;edit-&#x27;+(++editSequence)):null;editTransactions.set(e,{snapshot:captureState(),label:actionLabel(e),group,toastVersion});}
+function finishTransaction(e){const frame=editTransactions.get(e);if(!frame)return;const changed=JSON.stringify(frame.snapshot.data)!==JSON.stringify(captureState().data),last=undoStack.at(-1);if(changed){if(!frame.group||last?.group!==frame.group){undoStack.push({snapshot:frame.snapshot,label:frame.label,group:frame.group,role:design.role});if(undoStack.length&gt;20)undoStack.shift();}if(e.type!==&#x27;input&#x27;)toast(toastVersion!==frame.toastVersion?lastToastText:frame.label+&#x27;.&#x27;,true);}
 else if(e.type===&#x27;change&#x27;&amp;&amp;frame.group&amp;&amp;last?.group===frame.group)toast(frame.label+&#x27;.&#x27;,true);}
 [&#x27;click&#x27;,&#x27;submit&#x27;,&#x27;input&#x27;,&#x27;change&#x27;].forEach(type=&gt;{root.addEventListener(type,beginTransaction,true);root.addEventListener(type,finishTransaction);});
 $(&#x27;ps-feedback&#x27;).addEventListener(&#x27;pointerenter&#x27;,()=&gt;clearTimeout(notificationTimer));$(&#x27;ps-feedback&#x27;).addEventListener(&#x27;pointerleave&#x27;,()=&gt;{if(!$(&#x27;ps-feedback&#x27;).contains(document.activeElement))scheduleNotification();});$(&#x27;ps-feedback&#x27;).addEventListener(&#x27;focusin&#x27;,()=&gt;clearTimeout(notificationTimer));$(&#x27;ps-feedback&#x27;).addEventListener(&#x27;focusout&#x27;,e=&gt;{if(!$(&#x27;ps-feedback&#x27;).contains(e.relatedTarget))scheduleNotification();});
