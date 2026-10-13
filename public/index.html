@@ -6,7 +6,7 @@
 <meta name="referrer" content="no-referrer">
 <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline' 'unsafe-eval' 'wasm-unsafe-eval' blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; style-src 'unsafe-inline' blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; img-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; font-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; media-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; worker-src blob:; connect-src blob: data:; frame-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
 <title>Panel Shop — Maqueta administrativa</title>
-<style>:root{color-scheme:light dark;background:light-dark(rgb(255 255 255), rgb(24 24 24))}html,body{margin:0}body{box-sizing:border-box;padding:1rem;background:inherit}iframe{display:block;width:100%;height:calc(100vh - 2rem);margin:0 auto;border:0}</style>
+<style>:root{color-scheme:light;background:#fff}html,body{margin:0}body{box-sizing:border-box;padding:1rem;background:inherit}iframe{display:block;width:100%;height:calc(100vh - 2rem);margin:0 auto;border:0}</style>
 </head>
 <body>
 <iframe id="codex-visualization" sandbox="allow-scripts" referrerpolicy="no-referrer" title="Panel Shop — Maqueta administrativa" data-srcdoc="&lt;!doctype html&gt;
@@ -1890,6 +1890,8 @@ html&gt;body{padding:0}&lt;/style&gt;
       &lt;/div&gt;
     &lt;/main&gt;
   &lt;/div&gt;
+  &lt;div id=&quot;ps-drawer-backdrop&quot; class=&quot;ps-drawer-backdrop&quot; hidden&gt;&lt;/div&gt;
+  &lt;aside id=&quot;ps-detail-drawer&quot; class=&quot;ps-drawer&quot; role=&quot;dialog&quot; aria-modal=&quot;true&quot; aria-labelledby=&quot;ps-drawer-title&quot; hidden&gt;&lt;/aside&gt;
 &lt;/div&gt;
 &lt;style&gt;
 #panelshop-inventario{--ps-bg:light-dark(#f4f6f8,#141b24);--ps-surface:light-dark(#fff,#1c2632);--ps-ink:light-dark(#172a3b,#eef4fa);--ps-muted:light-dark(#617384,#a5b4c4);--ps-line:light-dark(#e3e9ee,#344351);--ps-teal:light-dark(#007f82,#73d9d0);--ps-tealtext:light-dark(#fff,#0a2429);--ps-soft:light-dark(#eaf7f6,#183e43);--ps-side:light-dark(#183144,#172b3a);--ps-sideink:#eaf3f8;--ps-warn:light-dark(#8d5918,#eec178);--ps-warnbg:light-dark(#fff4dc,#403421);--ps-danger:light-dark(#ab3444,#ffadba);--ps-dangerbg:light-dark(#fdeef0,#462a34);font-family:Inter,system-ui,-apple-system,sans-serif;font-size:14px;line-height:1.5;color:var(--ps-ink);color-scheme:light dark}
@@ -2321,6 +2323,139 @@ html&gt;body{padding:0}&lt;/style&gt;
 #panelshop-inventario .ps-notice-kind.danger{color:var(--ps-danger)}
 #panelshop-inventario .ps-topbar{padding-right:90px}
 @media(max-width:730px){#panelshop-inventario .ps-topbar{padding-right:16px}}
+/* Monocromo: barra lateral índigo, contenido blanco, semáforo rojo / amarillo / verde para pendientes */
+html:root{color-scheme:light!important}
+#panelshop-inventario{color-scheme:light;--ps-bg:#fff;--ps-surface:#fff;--ps-ink:#0a0a0a;--ps-muted:#6b6b6b;--ps-line:#e6e6e6;--ps-soft:#f4f4f4;--ps-teal:#0a0a0a;--ps-tealtext:#fff;--ps-sidepaper:#F4F3FC;--ps-side:#08043E;--ps-sideink:color-mix(in srgb,#F4F3FC 62%,#08043E);--ps-navactive:color-mix(in srgb,#F4F3FC 10%,#08043E);--ps-navhover:color-mix(in srgb,#F4F3FC 6%,#08043E);--ps-navactiveink:#F4F3FC;--ps-red:#dc2626;--ps-amber:#b45309;--ps-green:#15803d;--ps-redbg:color-mix(in srgb,#dc2626 10%,transparent);--ps-amberbg:color-mix(in srgb,#eab308 18%,transparent);--ps-greenbg:color-mix(in srgb,#16a34a 11%,transparent);--ps-warn:var(--ps-amber);--ps-warnbg:var(--ps-amberbg);--ps-danger:var(--ps-red);--ps-dangerbg:var(--ps-redbg);--ps-success:var(--ps-green);--ps-successbg:var(--ps-greenbg);--ps-ease-out:cubic-bezier(0.23,1,0.32,1);--ps-ease-drawer:cubic-bezier(0.32,0.72,0,1)}
+#panelshop-inventario .ps-proposal span{background:var(--ps-soft);color:var(--ps-ink)}
+#panelshop-inventario .ps-sidebar{background:var(--ps-side);color:var(--ps-sideink);border-right:0}
+#panelshop-inventario .ps-brand{color:var(--ps-sidepaper)}
+#panelshop-inventario .ps-brand small{color:var(--ps-sideink);opacity:1}
+#panelshop-inventario .ps-brandmark{background:var(--ps-sidepaper);color:var(--ps-side)}
+#panelshop-inventario .ps-navlabel{color:var(--ps-sidepaper);opacity:.45}
+#panelshop-inventario .ps-nav{color:var(--ps-sideink);transition:background-color 150ms ease,color 150ms ease,transform 160ms var(--ps-ease-out)}
+#panelshop-inventario .ps-nav:hover{background:transparent}
+#panelshop-inventario .ps-nav.active{background:var(--ps-navactive);color:var(--ps-navactiveink);box-shadow:inset 3px 0 0 var(--ps-sidepaper)}
+#panelshop-inventario .ps-nav:active{transform:scale(.98)}
+#panelshop-inventario .ps-nav:focus-visible{outline:2px solid var(--ps-sidepaper);outline-offset:-2px}
+#panelshop-inventario .ps-sidebar-foot{color:var(--ps-sideink)}
+#panelshop-inventario .ps-button{transition:background-color 150ms ease,border-color 150ms ease,color 150ms ease,transform 160ms var(--ps-ease-out)}
+#panelshop-inventario .ps-button:hover:not(:disabled){background:var(--ps-surface);border-color:var(--ps-line)}
+#panelshop-inventario .ps-button.ps-primary:hover:not(:disabled){background:var(--ps-teal);border-color:var(--ps-teal);filter:none}
+#panelshop-inventario .ps-button:active:not(:disabled){transform:scale(.97)}
+
+#panelshop-inventario .ps-home-metrics{grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-bottom:28px;align-items:stretch}
+#panelshop-inventario .ps-metric-card{display:flex;flex-direction:column;gap:12px;min-width:0;padding:18px;background:var(--ps-surface);border:1px solid var(--ps-line);border-radius:12px}
+#panelshop-inventario .ps-metric-head{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+#panelshop-inventario .ps-metric-head h3{font-size:13px;font-weight:500;color:var(--ps-muted)}
+#panelshop-inventario .ps-metric-head strong{font-size:28px;line-height:1;font-weight:600;letter-spacing:-.5px;font-variant-numeric:tabular-nums}
+#panelshop-inventario .ps-mini-list{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+#panelshop-inventario .ps-mini{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:10px;width:100%;padding:10px 12px;text-align:left;border:1px solid transparent;border-radius:8px;color:var(--ps-ink);background:var(--ps-soft);transition:background-color 150ms ease,border-color 150ms ease,transform 160ms var(--ps-ease-out)}
+#panelshop-inventario .ps-mini.red{background:var(--ps-redbg);border-color:color-mix(in srgb,#dc2626 22%,transparent)}
+#panelshop-inventario .ps-mini.amber{background:var(--ps-amberbg);border-color:color-mix(in srgb,#eab308 32%,transparent)}
+#panelshop-inventario .ps-mini.green{background:var(--ps-greenbg);border-color:color-mix(in srgb,#16a34a 22%,transparent)}
+#panelshop-inventario .ps-mini-text{min-width:0}
+#panelshop-inventario .ps-mini-title,#panelshop-inventario .ps-mini-meta{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+#panelshop-inventario .ps-mini-title{font-size:13px;font-weight:500}
+#panelshop-inventario .ps-mini-meta{font-size:12px;color:var(--ps-muted);margin-top:1px}
+#panelshop-inventario .ps-mini-tag{font-size:12px;font-weight:500;white-space:nowrap;font-variant-numeric:tabular-nums}
+#panelshop-inventario .ps-mini.red .ps-mini-tag{color:var(--ps-red)}
+#panelshop-inventario .ps-mini.amber .ps-mini-tag{color:var(--ps-amber)}
+#panelshop-inventario .ps-mini.green .ps-mini-tag{color:var(--ps-green)}
+#panelshop-inventario button.ps-mini:active{transform:scale(.98)}
+#panelshop-inventario .ps-mini:focus-visible,#panelshop-inventario .ps-metric-link:focus-visible,#panelshop-inventario .ps-drawer-close:focus-visible{outline:2px solid var(--ps-ink);outline-offset:2px}
+#panelshop-inventario .ps-metric-foot{margin-top:auto;display:flex;justify-content:space-between;align-items:center;gap:8px}
+#panelshop-inventario .ps-metric-foot small{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--ps-green)}
+#panelshop-inventario .ps-metric-foot small::before{content:&quot;&quot;;width:6px;height:6px;border-radius:50%;background:currentColor}
+#panelshop-inventario .ps-metric-link{display:inline-flex;align-items:center;gap:4px;margin-left:auto;padding:6px 0;border:0;background:transparent;font-size:13px;font-weight:500;color:var(--ps-ink)}
+#panelshop-inventario .ps-metric-link svg{width:16px;height:16px;transition:transform 160ms var(--ps-ease-out)}
+
+#panelshop-inventario .ps-drawer-backdrop{position:fixed;inset:0;z-index:40;background:rgb(0 0 0 / 24%);opacity:0;transition:opacity 200ms ease}
+#panelshop-inventario .ps-drawer{position:fixed;top:0;right:0;bottom:0;z-index:41;width:min(420px,100%);display:flex;flex-direction:column;background:var(--ps-surface);color:var(--ps-ink);border-left:1px solid var(--ps-line);box-shadow:-16px 0 40px -12px rgb(0 0 0 / 18%);transform:translateX(100%);transition:transform 200ms var(--ps-ease-drawer)}
+#panelshop-inventario[data-detail-open] .ps-drawer-backdrop{opacity:1}
+#panelshop-inventario[data-detail-open] .ps-drawer{transform:none;transition-duration:280ms}
+#panelshop-inventario .ps-drawer-head{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;padding:20px 20px 16px;border-bottom:1px solid var(--ps-line)}
+#panelshop-inventario .ps-drawer-kicker{display:flex;align-items:center;flex-wrap:wrap;gap:8px;font-size:12px;color:var(--ps-muted)}
+#panelshop-inventario .ps-drawer-head h3{font-size:20px;font-weight:600;letter-spacing:-.3px;margin-top:10px}
+#panelshop-inventario .ps-drawer-head p{font-size:13px;color:var(--ps-muted);margin-top:2px}
+#panelshop-inventario .ps-level{display:inline-flex;align-items:center;gap:6px;padding:3px 9px;border-radius:999px;font-size:12px;font-weight:500}
+#panelshop-inventario .ps-level::before{content:&quot;&quot;;width:6px;height:6px;border-radius:50%;background:currentColor}
+#panelshop-inventario .ps-level.red{background:var(--ps-redbg);color:var(--ps-red)}
+#panelshop-inventario .ps-level.amber{background:var(--ps-amberbg);color:var(--ps-amber)}
+#panelshop-inventario .ps-level.green{background:var(--ps-greenbg);color:var(--ps-green)}
+#panelshop-inventario .ps-drawer-close{flex-shrink:0;width:36px;height:36px;display:grid;place-items:center;border:1px solid var(--ps-line);border-radius:8px;background:var(--ps-surface);transition:background-color 150ms ease,border-color 150ms ease,transform 160ms var(--ps-ease-out)}
+#panelshop-inventario .ps-drawer-close:active{transform:scale(.95)}
+#panelshop-inventario .ps-drawer-body{flex:1;overflow-y:auto;overscroll-behavior:contain;padding:18px 20px;display:grid;gap:20px;align-content:start}
+#panelshop-inventario .ps-drawer-section h4{margin:0 0 8px;font-size:11px;font-weight:500;letter-spacing:.6px;text-transform:uppercase;color:var(--ps-muted)}
+#panelshop-inventario .ps-drawer-section&gt;p{font-size:14px}
+#panelshop-inventario .ps-drawer-dl{display:grid;grid-template-columns:auto minmax(0,1fr);gap:7px 16px;margin:0;font-size:13px}
+#panelshop-inventario .ps-drawer-dl dt{color:var(--ps-muted)}
+#panelshop-inventario .ps-drawer-dl dd{margin:0;text-align:right;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
+#panelshop-inventario .ps-drawer-lines{list-style:none;margin:0;padding:0;font-size:13px}
+#panelshop-inventario .ps-drawer-lines li{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:9px 0;border-bottom:1px solid var(--ps-line)}
+#panelshop-inventario .ps-drawer-lines li span:last-child{font-variant-numeric:tabular-nums;white-space:nowrap}
+#panelshop-inventario .ps-drawer-total{display:flex;justify-content:space-between;align-items:baseline;padding-top:12px;font-size:13px;color:var(--ps-muted)}
+#panelshop-inventario .ps-drawer-total strong{font-size:24px;font-weight:600;letter-spacing:-.4px;color:var(--ps-ink);font-variant-numeric:tabular-nums}
+#panelshop-inventario .ps-drawer-link{border:0;background:none;padding:0;font:inherit;color:var(--ps-ink);text-decoration:underline;text-underline-offset:2px}
+#panelshop-inventario .ps-drawer-actions{display:flex;gap:8px;padding:16px 20px;border-top:1px solid var(--ps-line)}
+#panelshop-inventario .ps-drawer-actions .ps-button{flex:1}
+
+#panelshop-inventario .ps-quick-actions{gap:12px}
+#panelshop-inventario .ps-shortcut{border-radius:12px;transition:border-color 150ms ease,background-color 150ms ease,transform 160ms var(--ps-ease-out)}
+#panelshop-inventario .ps-shortcut:active{transform:scale(.98)}
+#panelshop-inventario .ps-shortcut:hover:not(.ps-shortcut-primary){background:var(--ps-surface);border-color:var(--ps-line)}
+#panelshop-inventario .ps-shortcut-icon{background:var(--ps-soft);color:var(--ps-ink)}
+#panelshop-inventario .ps-shortcut.ps-shortcut-primary{background:#0a0a0a;border-color:#0a0a0a;color:#fff}
+#panelshop-inventario .ps-shortcut-primary small{color:#a3a3a3}
+#panelshop-inventario .ps-shortcut-primary .ps-shortcut-icon{background:rgb(255 255 255 / 12%);color:#fff}
+#panelshop-inventario .ps-shortcut&gt;svg:last-child{color:var(--ps-muted);transition:transform 160ms var(--ps-ease-out)}
+#panelshop-inventario .ps-shortcut-primary&gt;svg:last-child{color:#fff}
+
+#panelshop-inventario .ps-stats-panel{border-radius:12px;padding:20px}
+#panelshop-inventario .ps-notice-filters{gap:6px}
+#panelshop-inventario .ps-notice-filters button{border-radius:999px;transition:background-color 150ms ease,border-color 150ms ease,color 150ms ease,transform 160ms var(--ps-ease-out)}
+#panelshop-inventario .ps-notice-filters button:active{transform:scale(.97)}
+#panelshop-inventario .ps-notice-filters button[aria-pressed=true]{background:var(--ps-ink);border-color:var(--ps-ink);color:#fff}
+#panelshop-inventario .ps-notice-filters button[aria-pressed=true] span{opacity:.7}
+#panelshop-inventario .ps-notice-icon{background:var(--ps-soft);color:var(--ps-ink)}
+#panelshop-inventario .ps-notice-icon.red{background:var(--ps-redbg);color:var(--ps-red)}
+#panelshop-inventario .ps-notice-icon.amber{background:var(--ps-amberbg);color:var(--ps-amber)}
+#panelshop-inventario .ps-notice-icon.green{background:var(--ps-greenbg);color:var(--ps-green)}
+#panelshop-inventario .ps-notice-kind{font-weight:500}
+#panelshop-inventario .ps-notice-kind.red{color:var(--ps-red)}
+#panelshop-inventario .ps-notice-kind.amber{color:var(--ps-amber)}
+#panelshop-inventario .ps-notice-kind.green{color:var(--ps-green)}
+#panelshop-inventario .ps-notification .ps-button{border-color:var(--ps-ink)}
+
+@media (hover:hover) and (pointer:fine){
+#panelshop-inventario .ps-nav:not(.active):hover{background:var(--ps-navhover);color:var(--ps-sidepaper)}
+#panelshop-inventario .ps-button:hover:not(:disabled){background:var(--ps-soft);border-color:var(--ps-ink)}
+#panelshop-inventario .ps-button.ps-primary:hover:not(:disabled){background:#262626;border-color:#262626}
+#panelshop-inventario .ps-notification .ps-button:hover:not(:disabled){background:var(--ps-ink);color:#fff}
+#panelshop-inventario button.ps-mini.red:hover{background:color-mix(in srgb,#dc2626 16%,transparent)}
+#panelshop-inventario button.ps-mini.amber:hover{background:color-mix(in srgb,#eab308 27%,transparent)}
+#panelshop-inventario button.ps-mini.green:hover{background:color-mix(in srgb,#16a34a 17%,transparent)}
+#panelshop-inventario .ps-metric-link:hover svg,#panelshop-inventario .ps-shortcut:hover&gt;svg:last-child{transform:translateX(2px)}
+#panelshop-inventario .ps-drawer-close:hover{background:var(--ps-soft);border-color:var(--ps-ink)}
+#panelshop-inventario .ps-shortcut:hover:not(.ps-shortcut-primary){border-color:var(--ps-ink)}
+#panelshop-inventario .ps-shortcut.ps-shortcut-primary:hover{background:#262626}
+#panelshop-inventario .ps-notice-filters button[aria-pressed=false]:hover{border-color:var(--ps-ink);color:var(--ps-ink)}
+}
+@media (max-width:950px) and (min-width:601px){
+#panelshop-inventario .ps-mini{grid-template-columns:minmax(0,1fr)}
+#panelshop-inventario .ps-mini-tag{grid-row:1;justify-self:start}
+}
+@media (max-width:600px){
+#panelshop-inventario .ps-home-metrics{grid-template-columns:minmax(0,1fr);gap:10px}
+#panelshop-inventario .ps-metric-card{padding:16px}
+#panelshop-inventario .ps-mini{min-height:44px}
+#panelshop-inventario .ps-drawer{top:auto;left:0;width:100%;max-height:85vh;border-left:0;border-top:1px solid var(--ps-line);border-radius:16px 16px 0 0;box-shadow:0 -16px 40px -12px rgb(0 0 0 / 18%);transform:translateY(100%)}
+#panelshop-inventario .ps-drawer-close{width:44px;height:44px}
+}
+@media (prefers-reduced-motion:reduce){
+#panelshop-inventario .ps-drawer{transform:none!important;opacity:0;transition:opacity 200ms ease!important}
+#panelshop-inventario[data-detail-open] .ps-drawer{opacity:1}
+#panelshop-inventario .ps-button:active,#panelshop-inventario .ps-nav:active,#panelshop-inventario .ps-shortcut:active,#panelshop-inventario button.ps-mini:active,#panelshop-inventario .ps-drawer-close:active,#panelshop-inventario .ps-notice-filters button:active,#panelshop-inventario .ps-metric-link:hover svg,#panelshop-inventario .ps-shortcut:hover&gt;svg:last-child{transform:none!important}
+}
 &lt;/style&gt;
 &lt;script&gt;
 (function(){
@@ -2388,8 +2523,8 @@ let products=JSON.parse(JSON.stringify(initial)),logs=seedLog.slice(),branch=&#x
 let clients=seedClients.slice(),tasks=seedTasks.slice(),quotes=seedQuotes.slice(),notes=seedNotes.slice(),selectedClient=&#x27;c1&#x27;,profileTab=&#x27;summary&#x27;,taskFilter=&#x27;pending&#x27;;
 let draft={client:&#x27;c1&#x27;,summary:&#x27;Remodelación de recibidor&#x27;,advisor:&#x27;Ana Martínez&#x27;,validity:15,notes:&#x27;Confirmar medidas antes de programar la instalación.&#x27;,discount:0,tax:0,items:[{key:&#x27;i1&#x27;,product:&#x27;p1&#x27;,qty:2,price:3800,branch:&#x27;A&#x27;},{key:&#x27;i2&#x27;,product:&#x27;p2&#x27;,qty:4,price:890,branch:&#x27;B&#x27;}],charges:[{key:&#x27;g1&#x27;,type:&#x27;Mano de obra&#x27;,name:&#x27;Instalación de puertas&#x27;,qty:2,price:600},{key:&#x27;g2&#x27;,type:&#x27;Gasto extra&#x27;,name:&#x27;Gasolina y traslado&#x27;,qty:1,price:350}]};
 let quotationTab=&#x27;compose&#x27;,catalogOpen=false,connectionOnline=true;
-let homeNoticeFilter=&#x27;all&#x27;,showAllNotices=false;
-const design={compact:false,role:&#x27;admin&#x27;,navStyle:&#x27;light&#x27;};
+let homeNoticeFilter=&#x27;all&#x27;,showAllNotices=false,detailRef=null,detailTrigger=null,detailHideTimer=null;
+const design={compact:false,role:&#x27;admin&#x27;};
 const undoStack=[];
 let notificationTimer=null,lastToastText=&#x27;&#x27;,toastVersion=0,editSequence=0,activeEditToken=&#x27;&#x27;;
 function applySaved(s){if(!s||!s.privateContent)return;const x=s.privateContent;homeNoticeFilter=[&#x27;all&#x27;,&#x27;quotes&#x27;,&#x27;stock&#x27;,&#x27;contacts&#x27;].includes(x.homeNoticeFilter)?x.homeNoticeFilter:&#x27;all&#x27;;showAllNotices=x.showAllNotices===true;if(Array.isArray(x.products)&amp;&amp;x.products.length&amp;&amp;x.products.every(p=&gt;p.id&amp;&amp;p.stock&amp;&amp;Number.isFinite(p.price)))products=x.products;if(Array.isArray(x.logs))logs=x.logs;branch=[&#x27;all&#x27;,&#x27;A&#x27;,&#x27;B&#x27;].includes(x.branch)?x.branch:&#x27;all&#x27;;filter=[&#x27;all&#x27;,&#x27;low&#x27;,&#x27;zero&#x27;].includes(x.filter)?x.filter:&#x27;all&#x27;;selected=products.some(p=&gt;p.id===x.selected)?x.selected:null;view=x.layoutVersion===2&amp;&amp;[&#x27;home&#x27;,&#x27;products&#x27;,&#x27;stock&#x27;,&#x27;movements&#x27;,&#x27;clients&#x27;,&#x27;followups&#x27;,&#x27;quotations&#x27;,&#x27;statistics&#x27;,&#x27;reports&#x27;].includes(x.view)?x.view:&#x27;home&#x27;;if(x.reportState){const r=x.reportState;if([&#x27;30&#x27;,&#x27;7&#x27;,&#x27;month&#x27;,&#x27;year&#x27;,&#x27;custom&#x27;].includes(r.period))reportState.period=r.period;if([&#x27;all&#x27;,&#x27;products&#x27;,&#x27;installation&#x27;,&#x27;service&#x27;].includes(r.type))reportState.type=r.type;for(const k of [&#x27;from&#x27;,&#x27;to&#x27;])if(/^\d{4}-\d{2}-\d{2}$/.test(r[k]||&#x27;&#x27;))reportState[k]=r[k];reportState.clientMeasure=r.clientMeasure===&#x27;count&#x27;?&#x27;count&#x27;:&#x27;amount&#x27;;reportState.detail=[&#x27;sales&#x27;,&#x27;margin&#x27;,&#x27;products&#x27;,&#x27;productMargin&#x27;,&#x27;payments&#x27;,&#x27;sellers&#x27;,&#x27;clients&#x27;].includes(r.detail)?r.detail:null;}if(Array.isArray(x.clients)&amp;&amp;x.clients.length)clients=x.clients;if(Array.isArray(x.tasks))tasks=x.tasks;if(Array.isArray(x.notes))notes=x.notes;if(Array.isArray(x.quotes)&amp;&amp;x.quotes.every(q=&gt;q.id&amp;&amp;Array.isArray(q.items)))quotes=x.quotes;if(x.draft&amp;&amp;Array.isArray(x.draft.items)&amp;&amp;Array.isArray(x.draft.charges)&amp;&amp;clients.some(c=&gt;c.id===x.draft.client))draft=x.draft;quotationTab=x.quotationTab===&#x27;history&#x27;?&#x27;history&#x27;:&#x27;compose&#x27;;connectionOnline=x.connectionOnline!==false;selectedClient=clients.some(c=&gt;c.id===x.selectedClient)?x.selectedClient:clients[0].id;profileTab=[&#x27;summary&#x27;,&#x27;quotes&#x27;,&#x27;activity&#x27;].includes(x.profileTab)?x.profileTab:&#x27;summary&#x27;;taskFilter=x.taskFilter===&#x27;done&#x27;?&#x27;done&#x27;:&#x27;pending&#x27;;if(x.statsState){const z=x.statsState;if([&#x27;30&#x27;,&#x27;7&#x27;,&#x27;month&#x27;,&#x27;year&#x27;,&#x27;custom&#x27;].includes(z.period))statsState.period=z.period;if([&#x27;all&#x27;,&#x27;products&#x27;,&#x27;installation&#x27;,&#x27;service&#x27;].includes(z.type))statsState.type=z.type;if([&#x27;delivered&#x27;,&#x27;accepted&#x27;,&#x27;pending&#x27;,&#x27;rejected&#x27;,&#x27;all&#x27;].includes(z.status))statsState.status=z.status;if(/^\d{4}-\d{2}-\d{2}$/.test(z.from||&#x27;&#x27;))statsState.from=z.from;if(/^\d{4}-\d{2}-\d{2}$/.test(z.to||&#x27;&#x27;))statsState.to=z.to;statsState.expense=Object.hasOwn(expenseNames,z.expense)?z.expense:null;statsState.operation=statRecords.some(r=&gt;r.id===z.operation)?z.operation:null;}}
@@ -2408,8 +2543,8 @@ products.forEach(p=&gt;{const before=currentProducts.find(x=&gt;x.id===p.id);if(
 homeNoticeFilter=u.homeNoticeFilter||&#x27;all&#x27;;showAllNotices=u.showAllNotices===true;branch=u.branch;filter=u.filter;view=u.view;selected=u.selected;selectedClient=u.selectedClient;profileTab=u.profileTab;taskFilter=u.taskFilter;quotationTab=u.quotationTab;catalogOpen=u.catalogOpen;connectionOnline=u.connectionOnline;Object.assign(statsState,u.statsState);Object.assign(reportState,u.reportState);$(&#x27;ps-catalogue-search&#x27;).value=u.catalogueSearch||&#x27;&#x27;;$(&#x27;ps-search&#x27;).value=u.search;$(&#x27;ps-category&#x27;).value=u.category;$(&#x27;ps-client-search&#x27;).value=u.clientSearch;$(&#x27;ps-client-filter&#x27;).value=u.clientFilter;closeEditor();$(&#x27;ps-document-preview&#x27;).hidden=true;render();toast(&#x27;Se deshizo: &#x27;+entry.label+&#x27;.&#x27;);remember();updateUndoButton();}
 function render(){
 if(design.role!==&#x27;admin&#x27;&amp;&amp;[&#x27;statistics&#x27;,&#x27;reports&#x27;].includes(view))view=&#x27;home&#x27;;[&#x27;statistics&#x27;,&#x27;reports&#x27;].forEach(v=&gt;root.querySelector(&#x27;[data-view=&quot;&#x27;+v+&#x27;&quot;]&#x27;).hidden=design.role!==&#x27;admin&#x27;);
-const crm=view===&#x27;clients&#x27;||view===&#x27;followups&#x27;;root.classList.toggle(&#x27;ps-compact&#x27;,design.compact);root.classList.toggle(&#x27;ps-darknav&#x27;,design.navStyle===&#x27;dark&#x27;);$(&#x27;ps-role&#x27;).textContent=design.role===&#x27;admin&#x27;?&#x27;Administradora&#x27;:&#x27;Asesora de ventas&#x27;;$(&#x27;ps-management&#x27;).hidden=design.role!==&#x27;admin&#x27;||![&#x27;products&#x27;,&#x27;stock&#x27;,&#x27;movements&#x27;].includes(view);$(&#x27;ps-open-add&#x27;).hidden=view!==&#x27;products&#x27;;$(&#x27;ps-open-add&#x27;).lastChild.textContent=&#x27; Nuevo producto&#x27;;$(&#x27;ps-open-restock&#x27;).classList.toggle(&#x27;ps-primary&#x27;,view===&#x27;stock&#x27;||view===&#x27;movements&#x27;);$(&#x27;ps-open-restock&#x27;).hidden=view===&#x27;products&#x27;;$(&#x27;ps-open-move&#x27;).hidden=view===&#x27;products&#x27;;$(&#x27;ps-crm-actions&#x27;).hidden=!crm;$(&#x27;ps-branch&#x27;).value=branch;
-const titles={home:[&#x27;Panel principal&#x27;,&#x27;Cotiza, consulta existencias y atiende los pendientes de hoy&#x27;],products:[&#x27;Productos&#x27;,&#x27;Registra y edita las fichas del catálogo. Las existencias se gestionan en Ajustar stock.&#x27;],stock:[&#x27;Ajustar stock&#x27;,&#x27;Agrega mercancía recibida o corrige el conteo de un producto registrado&#x27;],movements:[&#x27;Movimientos&#x27;,&#x27;Entradas y ajustes con responsable y motivo&#x27;],clients:[&#x27;Clientes&#x27;,&#x27;Cotizaciones, historial y próximos contactos en un solo lugar&#x27;],followups:[&#x27;Seguimientos&#x27;,&#x27;Los pendientes de cada cliente y quién les da seguimiento&#x27;],quotations:[&#x27;Cotizaciones&#x27;,&#x27;Del catálogo a una propuesta para el cliente&#x27;],statistics:[&#x27;Gastos y utilidad&#x27;,&#x27;Identifica en qué se gasta y cuánto queda de cada venta&#x27;],reports:[&#x27;Reportes&#x27;,&#x27;Ventas, márgenes y comportamiento de compra&#x27;]};$(&#x27;ps-section-label&#x27;).textContent=crm?&#x27;CRM&#x27;:[&#x27;statistics&#x27;,&#x27;reports&#x27;].includes(view)?&#x27;Administración&#x27;:view===&#x27;home&#x27;?&#x27;Inicio&#x27;:view===&#x27;quotations&#x27;?&#x27;Ventas&#x27;:&#x27;Inventario&#x27;;$(&#x27;ps-title&#x27;).textContent=titles[view][0];$(&#x27;ps-subtitle&#x27;).textContent=titles[view][1];
+const crm=view===&#x27;clients&#x27;||view===&#x27;followups&#x27;;root.classList.toggle(&#x27;ps-compact&#x27;,design.compact);closeDetail(false);$(&#x27;ps-role&#x27;).textContent=design.role===&#x27;admin&#x27;?&#x27;Administradora&#x27;:&#x27;Asesora de ventas&#x27;;$(&#x27;ps-management&#x27;).hidden=design.role!==&#x27;admin&#x27;||![&#x27;products&#x27;,&#x27;stock&#x27;,&#x27;movements&#x27;].includes(view);$(&#x27;ps-open-add&#x27;).hidden=view!==&#x27;products&#x27;;$(&#x27;ps-open-add&#x27;).lastChild.textContent=&#x27; Nuevo producto&#x27;;$(&#x27;ps-open-restock&#x27;).classList.toggle(&#x27;ps-primary&#x27;,view===&#x27;stock&#x27;||view===&#x27;movements&#x27;);$(&#x27;ps-open-restock&#x27;).hidden=view===&#x27;products&#x27;;$(&#x27;ps-open-move&#x27;).hidden=view===&#x27;products&#x27;;$(&#x27;ps-crm-actions&#x27;).hidden=!crm;$(&#x27;ps-branch&#x27;).value=branch;
+const titles={home:[&#x27;Panel principal&#x27;,&#x27;Cotiza, consulta existencias y atiende los pendientes de hoy&#x27;],products:[&#x27;Productos&#x27;,&#x27;Registra y edita las fichas del catálogo. Las existencias se gestionan en Ajustar stock.&#x27;],stock:[&#x27;Ajustar stock&#x27;,&#x27;Agrega mercancía recibida o corrige el conteo de un producto registrado&#x27;],movements:[&#x27;Movimientos&#x27;,&#x27;Entradas y ajustes con responsable y motivo&#x27;],clients:[&#x27;Clientes&#x27;,&#x27;Cotizaciones, historial y próximos contactos en un solo lugar&#x27;],followups:[&#x27;Seguimientos&#x27;,&#x27;Los pendientes de cada cliente y quién les da seguimiento&#x27;],quotations:[&#x27;Cotizaciones&#x27;,&#x27;Del catálogo a una propuesta para el cliente&#x27;],statistics:[&#x27;Gastos y utilidad&#x27;,&#x27;Identifica en qué se gasta y cuánto queda de cada venta&#x27;],reports:[&#x27;Reportes&#x27;,&#x27;Ventas, márgenes y comportamiento de compra&#x27;]};$(&#x27;ps-section-label&#x27;).textContent=crm?&#x27;CRM&#x27;:[&#x27;statistics&#x27;,&#x27;reports&#x27;].includes(view)?&#x27;Administración&#x27;:view===&#x27;home&#x27;?&#x27;Inicio&#x27;:view===&#x27;quotations&#x27;?&#x27;Ventas&#x27;:&#x27;Inventario&#x27;;$(&#x27;ps-title&#x27;).textContent=titles[view][0];$(&#x27;ps-subtitle&#x27;).textContent=titles[view][1];$(&#x27;ps-section-label&#x27;).hidden=view===&#x27;home&#x27;;$(&#x27;ps-subtitle&#x27;).hidden=view===&#x27;home&#x27;;
 [&#x27;home&#x27;,&#x27;products&#x27;,&#x27;stock&#x27;,&#x27;movements&#x27;,&#x27;clients&#x27;,&#x27;followups&#x27;,&#x27;quotations&#x27;,&#x27;statistics&#x27;,&#x27;reports&#x27;].forEach(v=&gt;$(&#x27;ps-&#x27;+v+&#x27;-view&#x27;).hidden=view!==v);root.querySelectorAll(&#x27;[data-view]&#x27;).forEach(b=&gt;{b.classList.toggle(&#x27;active&#x27;,b.dataset.view===view);b.setAttribute(&#x27;aria-current&#x27;,b.dataset.view===view?&#x27;page&#x27;:&#x27;false&#x27;);});
 const q=$(&#x27;ps-search&#x27;).value.trim().toLocaleLowerCase(&#x27;es&#x27;);const cat=$(&#x27;ps-category&#x27;).value;const base=products.filter(p=&gt;(cat===&#x27;all&#x27;||p.category===cat)&amp;&amp;(!q||[p.name,p.sku,p.supplier].join(&#x27; &#x27;).toLocaleLowerCase(&#x27;es&#x27;).includes(q)));
 $(&#x27;ps-count-all&#x27;).textContent=base.length;$(&#x27;ps-count-low&#x27;).textContent=base.filter(p=&gt;classification(p)===&#x27;low&#x27;||classification(p)===&#x27;zero&#x27;).length;$(&#x27;ps-count-zero&#x27;).textContent=base.filter(p=&gt;classification(p)===&#x27;zero&#x27;).length;
@@ -2609,25 +2744,79 @@ function renderCatalogue(){const term=$(&#x27;ps-catalogue-search&#x27;).value.t
   $(&#x27;ps-catalogue-rows&#x27;).innerHTML=rows.map(p=&gt;&#x27;&lt;tr&gt;&lt;td&gt;&lt;div class=&quot;ps-product-cell&quot;&gt;&lt;span class=&quot;ps-thumb&quot;&gt;&lt;i data-lucide=&quot;&#x27;+esc(p.icon)+&#x27;&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;/span&gt;&lt;div&gt;&#x27;+esc(p.name)+&#x27;&lt;small&gt;&#x27;+esc(p.sku)+&#x27; · &#x27;+esc(p.category)+&#x27;&lt;/small&gt;&lt;/div&gt;&lt;/div&gt;&lt;/td&gt;&lt;td data-label=&quot;Proveedor&quot;&gt;&#x27;+esc(p.supplier)+&#x27;&lt;/td&gt;&lt;td data-label=&quot;Precios&quot; class=&quot;ps-number&quot;&gt;Venta: &#x27;+money(p.price)+(design.role===&#x27;admin&#x27;?&#x27;&lt;small&gt;Compra: &#x27;+money(p.cost)+&#x27;&lt;/small&gt;&#x27;:&#x27;&#x27;)+&#x27;&lt;/td&gt;&lt;td&gt;&#x27;+ (design.role===&#x27;admin&#x27;?&#x27;&lt;button type=&quot;button&quot; data-edit=&quot;&#x27;+p.id+&#x27;&quot; class=&quot;ps-button cursor-interaction&quot;&gt;&lt;i data-lucide=&quot;pencil&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; Editar datos&lt;/button&gt;&#x27;:&#x27;&lt;span class=&quot;ps-stock-note&quot;&gt;Consulta del catálogo&lt;/span&gt;&#x27;)+&#x27;&lt;/td&gt;&lt;/tr&gt;&#x27;).join(&#x27;&#x27;);
 }
 function branchQuote(q){return q.branch||clients.find(c=&gt;c.id===q.client)?.branch||&#x27;A&#x27;;}
+const levelWords={red:&#x27;urgente&#x27;,amber:&#x27;requiere atención&#x27;,green:&#x27;al día&#x27;};
+function daysSince(day){return Math.round((new Date(today+&#x27;T12:00:00&#x27;)-new Date(day+&#x27;T12:00:00&#x27;))/86400000);}
+function plural(n,word){return n+&#x27; &#x27;+word+(n===1?&#x27;&#x27;:&#x27;s&#x27;);}
+function quoteLevel(q){return q.status===&#x27;Pendiente de sincronizar&#x27;||q.when&lt;localDay(-7)?&#x27;red&#x27;:q.when&lt;localDay(-3)?&#x27;amber&#x27;:&#x27;green&#x27;;}
+function quoteLevelText(q){const level=quoteLevel(q);return level===&#x27;red&#x27;?(q.status===&#x27;Pendiente de sincronizar&#x27;?&#x27;Sin sincronizar&#x27;:&#x27;Más de 7 días&#x27;):level===&#x27;amber&#x27;?&#x27;3 a 7 días&#x27;:&#x27;Reciente&#x27;;}
+function taskLevel(t){return t.due&lt;today?&#x27;red&#x27;:t.due===today?&#x27;amber&#x27;:&#x27;green&#x27;;}
+function taskLevelText(t){return t.due&lt;today?&#x27;Vencido&#x27;:t.due===today?&#x27;Para hoy&#x27;:&#x27;Próximo&#x27;;}
 function renderHome(){
   const pending=quotes.filter(q=&gt;q.kind===&#x27;Cotización&#x27;&amp;&amp;![&#x27;Rechazada&#x27;,&#x27;Entregada&#x27;,&#x27;Aceptada&#x27;].includes(q.status)&amp;&amp;(branch===&#x27;all&#x27;||branchQuote(q)===branch));
   const shortage=[];products.forEach(p=&gt;(branch===&#x27;all&#x27;?[&#x27;A&#x27;,&#x27;B&#x27;]:[branch]).forEach(b=&gt;{if(p.stock[b]===0||p.stock[b]&lt;p.min)shortage.push({p,b});}));
   const contacts=tasks.filter(t=&gt;!t.done&amp;&amp;(branch===&#x27;all&#x27;||clients.find(c=&gt;c.id===t.client)?.branch===branch)).sort((a,b)=&gt;a.due.localeCompare(b.due));
-  const metrics=[{view:&#x27;quotations&#x27;,label:&#x27;Cotizaciones por revisar&#x27;,n:pending.length,note:&#x27;Enviadas, pendientes y borradores&#x27;,action:&#x27;Ver cotizaciones&#x27;},{view:&#x27;stock&#x27;,label:&#x27;Stock que necesita atención&#x27;,n:shortage.length,note:&#x27;Productos con existencias bajas o agotadas&#x27;,action:&#x27;Ver productos&#x27;},{view:&#x27;followups&#x27;,label:&#x27;Contactos pendientes&#x27;,n:contacts.length,note:&#x27;Seguimientos con fecha y responsable&#x27;,action:&#x27;Ver seguimientos&#x27;}];
-  $(&#x27;ps-home-metrics&#x27;).innerHTML=metrics.map(x=&gt;&#x27;&lt;button type=&quot;button&quot; data-home-view=&quot;&#x27;+x.view+&#x27;&quot; &#x27;+(x.view===&#x27;stock&#x27;?&#x27;data-home-low&#x27;:&#x27;&#x27;)+&#x27; class=&quot;ps-home-metric cursor-interaction&quot;&gt;&lt;span&gt;&#x27;+x.label+&#x27;&lt;/span&gt;&lt;strong&gt;&#x27;+x.n+&#x27;&lt;/strong&gt;&lt;small&gt;&#x27;+x.note+&#x27;&lt;/small&gt;&lt;span class=&quot;ps-metric-action&quot;&gt;&#x27;+x.action+&#x27;&lt;i data-lucide=&quot;arrow-right&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;/span&gt;&lt;/button&gt;&#x27;).join(&#x27;&#x27;);
   const shortcuts=[{attr:&#x27;data-start-quote&#x27;,icon:&#x27;file-plus&#x27;,name:&#x27;Crear cotización&#x27;,note:&#x27;Elige el cliente, agrega productos y calcula el total.&#x27;,primary:true},{attr:&#x27;data-home-view=&quot;stock&quot;&#x27;,icon:&#x27;boxes&#x27;,name:design.role===&#x27;admin&#x27;?&#x27;Agregar o ajustar stock&#x27;:&#x27;Consultar existencias&#x27;,note:design.role===&#x27;admin&#x27;?&#x27;Registra entradas o corrige el conteo de un producto.&#x27;:&#x27;Consulta cuántas piezas hay en cada sucursal.&#x27;},{attr:&#x27;data-home-add-client&#x27;,icon:&#x27;user-plus&#x27;,name:&#x27;Registrar cliente&#x27;,note:&#x27;Guarda sus datos para cotizar y dar seguimiento.&#x27;},design.role===&#x27;admin&#x27;?{attr:&#x27;data-home-add-product&#x27;,icon:&#x27;package-plus&#x27;,name:&#x27;Registrar producto&#x27;,note:&#x27;Crea una ficha nueva en el catálogo.&#x27;}:{attr:&#x27;data-home-view=&quot;followups&quot;&#x27;,icon:&#x27;calendar-check&#x27;,name:&#x27;Dar seguimiento&#x27;,note:&#x27;Revisa qué clientes necesitan una respuesta.&#x27;}];
   $(&#x27;ps-quick-actions&#x27;).innerHTML=shortcuts.map(x=&gt;&#x27;&lt;button type=&quot;button&quot; &#x27;+x.attr+&#x27; class=&quot;ps-shortcut &#x27;+(x.primary?&#x27;ps-shortcut-primary&#x27;:&#x27;&#x27;)+&#x27; cursor-interaction&quot;&gt;&lt;span class=&quot;ps-shortcut-icon&quot;&gt;&lt;i data-lucide=&quot;&#x27;+x.icon+&#x27;&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;/span&gt;&lt;span&gt;&lt;strong&gt;&#x27;+x.name+&#x27;&lt;/strong&gt;&lt;small&gt;&#x27;+x.note+&#x27;&lt;/small&gt;&lt;/span&gt;&lt;i data-lucide=&quot;arrow-right&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;/button&gt;&#x27;).join(&#x27;&#x27;);
   const notices=[
-    ...pending.sort((a,b)=&gt;a.when.localeCompare(b.when)).map(q=&gt;({category:&#x27;quotes&#x27;,priority:q.when&lt;localDay(-7)?1:2,icon:q.status===&#x27;Pendiente de sincronizar&#x27;?&#x27;wifi-off&#x27;:&#x27;file-clock&#x27;,tone:&#x27;&#x27;,kind:q.status===&#x27;Pendiente de sincronizar&#x27;?&#x27;Sincronización pendiente&#x27;:q.status===&#x27;Borrador&#x27;?&#x27;Borrador por completar&#x27;:&#x27;Cotización pendiente&#x27;,title:q.folio+&#x27; · &#x27;+(clients.find(c=&gt;c.id===q.client)?.name||&#x27;Cliente&#x27;),text:q.summary+&#x27; · &#x27;+q.status+&#x27; · &#x27;+dateLabel(q.when),action:&#x27;Ver cotización&#x27;,attr:&#x27;data-load-quotation=&quot;&#x27;+q.id+&#x27;&quot;&#x27;})),
-    ...shortage.map(({p,b})=&gt;({category:&#x27;stock&#x27;,priority:p.stock[b]===0?0:2,icon:&#x27;package-minus&#x27;,tone:p.stock[b]===0?&#x27;danger&#x27;:&#x27;warn&#x27;,kind:p.stock[b]===0?&#x27;Sin existencias&#x27;:&#x27;Stock bajo&#x27;,title:p.name,text:&#x27;Sucursal &#x27;+b+&#x27; · &#x27;+p.stock[b]+&#x27; piezas disponibles · Mínimo &#x27;+p.min,action:design.role===&#x27;admin&#x27;?&#x27;Agregar stock&#x27;:&#x27;Ver stock&#x27;,attr:&#x27;data-notice-stock=&quot;&#x27;+p.id+&#x27;&quot; data-notice-branch=&quot;&#x27;+b+&#x27;&quot;&#x27;})),
-    ...contacts.map(t=&gt;({category:&#x27;contacts&#x27;,priority:t.due&lt;today?0:t.due===today?1:3,icon:&#x27;calendar-clock&#x27;,tone:t.due&lt;today?&#x27;warn&#x27;:&#x27;&#x27;,kind:t.due&lt;today?&#x27;Seguimiento vencido&#x27;:t.due===today?&#x27;Contacto para hoy&#x27;:&#x27;Seguimiento próximo&#x27;,title:clients.find(c=&gt;c.id===t.client)?.name||&#x27;Cliente&#x27;,text:t.title+&#x27; · &#x27;+dateLabel(t.due)+&#x27; · &#x27;+t.advisor,action:&#x27;Ver cliente&#x27;,attr:&#x27;data-open-client=&quot;&#x27;+t.client+&#x27;&quot;&#x27;}))
+    ...pending.sort((a,b)=&gt;a.when.localeCompare(b.when)).map(q=&gt;{const client=clients.find(c=&gt;c.id===q.client)?.name||&#x27;Cliente&#x27;,days=daysSince(q.when);return {category:&#x27;quotes&#x27;,ref:&#x27;quote:&#x27;+q.id,priority:q.when&lt;localDay(-7)?1:2,level:quoteLevel(q),levelText:quoteLevelText(q),icon:q.status===&#x27;Pendiente de sincronizar&#x27;?&#x27;wifi-off&#x27;:&#x27;file-clock&#x27;,kind:q.status===&#x27;Pendiente de sincronizar&#x27;?&#x27;Sincronización pendiente&#x27;:q.status===&#x27;Borrador&#x27;?&#x27;Borrador por completar&#x27;:&#x27;Cotización pendiente&#x27;,title:q.folio+&#x27; · &#x27;+client,text:q.summary+&#x27; · &#x27;+q.status+&#x27; · &#x27;+dateLabel(q.when),action:&#x27;Ver cotización&#x27;,attr:&#x27;data-load-quotation=&quot;&#x27;+q.id+&#x27;&quot;&#x27;,mini:{title:q.folio+&#x27; · &#x27;+client,meta:q.summary+&#x27; · &#x27;+money(quoteTotal(q)),tag:days&lt;=0?&#x27;Hoy&#x27;:plural(days,&#x27;día&#x27;)}};}),
+    ...shortage.map(({p,b})=&gt;({category:&#x27;stock&#x27;,ref:&#x27;stock:&#x27;+p.id+&#x27;:&#x27;+b,priority:p.stock[b]===0?0:2,level:p.stock[b]===0?&#x27;red&#x27;:&#x27;amber&#x27;,levelText:p.stock[b]===0?&#x27;Agotado&#x27;:&#x27;Stock bajo&#x27;,icon:&#x27;package-minus&#x27;,kind:p.stock[b]===0?&#x27;Sin existencias&#x27;:&#x27;Stock bajo&#x27;,title:p.name,text:&#x27;Sucursal &#x27;+b+&#x27; · &#x27;+p.stock[b]+&#x27; piezas disponibles · Mínimo &#x27;+p.min,action:design.role===&#x27;admin&#x27;?&#x27;Agregar stock&#x27;:&#x27;Ver stock&#x27;,attr:&#x27;data-notice-stock=&quot;&#x27;+p.id+&#x27;&quot; data-notice-branch=&quot;&#x27;+b+&#x27;&quot;&#x27;,mini:{title:p.name,meta:&#x27;Sucursal &#x27;+b+&#x27; · &#x27;+p.stock[b]+&#x27; de &#x27;+p.min+&#x27; mín.&#x27;,tag:p.stock[b]===0?&#x27;Agotado&#x27;:&#x27;Bajo&#x27;}})),
+    ...contacts.map(t=&gt;{const client=clients.find(c=&gt;c.id===t.client)?.name||&#x27;Cliente&#x27;;return {category:&#x27;contacts&#x27;,ref:&#x27;task:&#x27;+t.id,priority:t.due&lt;today?0:t.due===today?1:3,level:taskLevel(t),levelText:taskLevelText(t),icon:&#x27;calendar-clock&#x27;,kind:t.due&lt;today?&#x27;Seguimiento vencido&#x27;:t.due===today?&#x27;Contacto para hoy&#x27;:&#x27;Seguimiento próximo&#x27;,title:client,text:t.title+&#x27; · &#x27;+dateLabel(t.due)+&#x27; · &#x27;+t.advisor,action:&#x27;Ver cliente&#x27;,attr:&#x27;data-open-client=&quot;&#x27;+t.client+&#x27;&quot;&#x27;,mini:{title:client,meta:t.title,tag:t.due&lt;today?&#x27;Vencido&#x27;:t.due===today?&#x27;Hoy&#x27;:dateLabel(t.due)}};})
   ].sort((a,b)=&gt;a.priority-b.priority);
+  const metrics=[
+    {view:&#x27;quotations&#x27;,cat:&#x27;quotes&#x27;,label:&#x27;Cotizaciones por revisar&#x27;,n:pending.length,all:&#x27;Ver todas&#x27;,empty:&#x27;No hay cotizaciones pendientes.&#x27;},
+    {view:&#x27;stock&#x27;,cat:&#x27;stock&#x27;,label:&#x27;Stock que necesita atención&#x27;,n:shortage.length,all:&#x27;Ver todo&#x27;,empty:&#x27;Todas las existencias están sobre el mínimo.&#x27;,low:true,ok:products.length*(branch===&#x27;all&#x27;?2:1)-shortage.length},
+    {view:&#x27;followups&#x27;,cat:&#x27;contacts&#x27;,label:&#x27;Contactos pendientes&#x27;,n:contacts.length,all:&#x27;Ver todos&#x27;,empty:&#x27;No hay seguimientos pendientes.&#x27;}
+  ];
+  $(&#x27;ps-home-metrics&#x27;).innerHTML=metrics.map(x=&gt;{const list=notices.filter(n=&gt;n.category===x.cat),items=list.slice(0,4),rest=list.length-items.length;
+    return &#x27;&lt;section class=&quot;ps-metric-card&quot; aria-labelledby=&quot;ps-metric-&#x27;+x.view+&#x27;&quot;&gt;&lt;div class=&quot;ps-metric-head&quot;&gt;&lt;h3 id=&quot;ps-metric-&#x27;+x.view+&#x27;&quot;&gt;&#x27;+x.label+&#x27;&lt;/h3&gt;&lt;strong&gt;&#x27;+x.n+&#x27;&lt;/strong&gt;&lt;/div&gt;&#x27;
+      +(items.length?&#x27;&lt;ul class=&quot;ps-mini-list&quot;&gt;&#x27;+items.map(n=&gt;&#x27;&lt;li&gt;&lt;button type=&quot;button&quot; data-detail=&quot;&#x27;+n.ref+&#x27;&quot; class=&quot;ps-mini &#x27;+n.level+&#x27; cursor-interaction&quot; aria-haspopup=&quot;dialog&quot; aria-label=&quot;&#x27;+esc(n.mini.title+&#x27;. &#x27;+n.levelText+&#x27;, &#x27;+levelWords[n.level]+&#x27;. Ver detalle&#x27;)+&#x27;&quot;&gt;&lt;span class=&quot;ps-mini-text&quot;&gt;&lt;span class=&quot;ps-mini-title&quot;&gt;&#x27;+esc(n.mini.title)+&#x27;&lt;/span&gt;&lt;span class=&quot;ps-mini-meta&quot;&gt;&#x27;+esc(n.mini.meta)+&#x27;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;ps-mini-tag&quot;&gt;&#x27;+esc(n.mini.tag)+&#x27;&lt;/span&gt;&lt;/button&gt;&lt;/li&gt;&#x27;).join(&#x27;&#x27;)+&#x27;&lt;/ul&gt;&#x27;:&#x27;&lt;div class=&quot;ps-mini green&quot;&gt;&lt;span class=&quot;ps-mini-text&quot;&gt;&lt;span class=&quot;ps-mini-title&quot;&gt;Todo en orden&lt;/span&gt;&lt;span class=&quot;ps-mini-meta&quot;&gt;&#x27;+x.empty+&#x27;&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;&#x27;)
+      +&#x27;&lt;div class=&quot;ps-metric-foot&quot;&gt;&#x27;+(x.ok!=null&amp;&amp;x.ok&gt;0?&#x27;&lt;small&gt;&#x27;+x.ok+&#x27; en orden&lt;/small&gt;&#x27;:&#x27;&#x27;)+&#x27;&lt;button type=&quot;button&quot; data-home-view=&quot;&#x27;+x.view+&#x27;&quot; &#x27;+(x.low?&#x27;data-home-low&#x27;:&#x27;&#x27;)+&#x27; class=&quot;ps-metric-link cursor-interaction&quot;&gt;&#x27;+(rest&gt;0?&#x27;+&#x27;+rest+&#x27; más&#x27;:x.all)+&#x27;&lt;i data-lucide=&quot;arrow-right&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;/button&gt;&lt;/div&gt;&lt;/section&gt;&#x27;;}).join(&#x27;&#x27;);
   const tabs=[[&#x27;all&#x27;,&#x27;Todo&#x27;,notices.length],[&#x27;quotes&#x27;,&#x27;Cotizaciones&#x27;,pending.length],[&#x27;stock&#x27;,&#x27;Inventario&#x27;,shortage.length],[&#x27;contacts&#x27;,&#x27;Seguimientos&#x27;,contacts.length]];
   $(&#x27;ps-notice-filters&#x27;).innerHTML=tabs.map(([key,label,count])=&gt;&#x27;&lt;button type=&quot;button&quot; data-notice-filter=&quot;&#x27;+key+&#x27;&quot; class=&quot;cursor-interaction&quot; aria-pressed=&quot;&#x27;+(homeNoticeFilter===key)+&#x27;&quot;&gt;&#x27;+label+&#x27; &lt;span&gt;&#x27;+count+&#x27;&lt;/span&gt;&lt;/button&gt;&#x27;).join(&#x27;&#x27;);
   const filtered=notices.filter(n=&gt;homeNoticeFilter===&#x27;all&#x27;||n.category===homeNoticeFilter),visible=showAllNotices?filtered:filtered.slice(0,5);
   $(&#x27;ps-notice-count&#x27;).textContent=filtered.length+&#x27; pendientes&#x27;;
-  $(&#x27;ps-notifications&#x27;).innerHTML=visible.length?visible.map(n=&gt;&#x27;&lt;div class=&quot;ps-notification&quot;&gt;&lt;span class=&quot;ps-notice-icon &#x27;+n.tone+&#x27;&quot;&gt;&lt;i data-lucide=&quot;&#x27;+n.icon+&#x27;&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;/span&gt;&lt;div&gt;&lt;small class=&quot;ps-notice-kind &#x27;+n.tone+&#x27;&quot;&gt;&#x27;+n.kind+&#x27;&lt;/small&gt;&lt;strong&gt;&#x27;+esc(n.title)+&#x27;&lt;/strong&gt;&lt;p&gt;&#x27;+esc(n.text)+&#x27;&lt;/p&gt;&lt;/div&gt;&lt;button type=&quot;button&quot; &#x27;+n.attr+&#x27; class=&quot;ps-button cursor-interaction&quot;&gt;&#x27;+n.action+&#x27;&lt;/button&gt;&lt;/div&gt;&#x27;).join(&#x27;&#x27;):&#x27;&lt;div class=&quot;ps-empty&quot;&gt;No hay pendientes de este tipo en la sucursal seleccionada.&lt;/div&gt;&#x27;;
+  $(&#x27;ps-notifications&#x27;).innerHTML=visible.length?visible.map(n=&gt;&#x27;&lt;div class=&quot;ps-notification&quot;&gt;&lt;span class=&quot;ps-notice-icon &#x27;+n.level+&#x27;&quot;&gt;&lt;i data-lucide=&quot;&#x27;+n.icon+&#x27;&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;/span&gt;&lt;div&gt;&lt;small class=&quot;ps-notice-kind &#x27;+n.level+&#x27;&quot;&gt;&#x27;+n.kind+&#x27;&lt;/small&gt;&lt;strong&gt;&#x27;+esc(n.title)+&#x27;&lt;/strong&gt;&lt;p&gt;&#x27;+esc(n.text)+&#x27;&lt;/p&gt;&lt;/div&gt;&lt;button type=&quot;button&quot; &#x27;+n.attr+&#x27; class=&quot;ps-button cursor-interaction&quot;&gt;&#x27;+n.action+&#x27;&lt;/button&gt;&lt;/div&gt;&#x27;).join(&#x27;&#x27;):&#x27;&lt;div class=&quot;ps-empty&quot;&gt;No hay pendientes de este tipo en la sucursal seleccionada.&lt;/div&gt;&#x27;;
   $(&#x27;ps-notice-more&#x27;).hidden=filtered.length&lt;=5;$(&#x27;ps-notice-more&#x27;).textContent=showAllNotices?&#x27;Mostrar solo 5 pendientes&#x27;:&#x27;Ver los &#x27;+filtered.length+&#x27; pendientes&#x27;;
+}
+function detailRows(rows){return &#x27;&lt;dl class=&quot;ps-drawer-dl&quot;&gt;&#x27;+rows.filter(r=&gt;r[1]!=null&amp;&amp;r[1]!==&#x27;&#x27;).map(([k,v])=&gt;&#x27;&lt;dt&gt;&#x27;+k+&#x27;&lt;/dt&gt;&lt;dd&gt;&#x27;+v+&#x27;&lt;/dd&gt;&#x27;).join(&#x27;&#x27;)+&#x27;&lt;/dl&gt;&#x27;;}
+function detailMarkup(ref){
+  const [type,id,b]=ref.split(&#x27;:&#x27;);let level,levelText,kind,title,subtitle,body,actions;
+  if(type===&#x27;quote&#x27;){const q=quotes.find(x=&gt;x.id===id);if(!q)return &#x27;&#x27;;const c=clients.find(x=&gt;x.id===q.client)||{},days=daysSince(q.when);
+    level=quoteLevel(q);levelText=quoteLevelText(q);kind=q.status===&#x27;Borrador&#x27;?&#x27;Borrador por completar&#x27;:&#x27;Cotización pendiente&#x27;;title=q.folio;subtitle=q.summary;
+    const lines=q.items.map(i=&gt;[i.qty+&#x27; × &#x27;+(products.find(p=&gt;p.id===i.product)?.name||&#x27;Producto&#x27;),money(i.price*i.qty)]).concat(Array.isArray(q.charges)?q.charges.map(g=&gt;[g.name||g.type,money(chargeCents(g)/100)]):q.extra?[[q.extraLabel||&#x27;Cargos adicionales&#x27;,money(q.extra)]]:[]);
+    body=&#x27;&lt;section class=&quot;ps-drawer-section&quot;&gt;&lt;h4&gt;Cliente&lt;/h4&gt;&#x27;+detailRows([[&#x27;Nombre&#x27;,esc(c.name||&#x27;Cliente&#x27;)],[&#x27;Teléfono&#x27;,esc(c.phone||&#x27;&#x27;)],[&#x27;Correo&#x27;,esc(c.email||&#x27;&#x27;)],[&#x27;Responsable&#x27;,esc(c.advisor||&#x27;&#x27;)]])+&#x27;&lt;/section&gt;&#x27;
+      +&#x27;&lt;section class=&quot;ps-drawer-section&quot;&gt;&lt;h4&gt;Cotización&lt;/h4&gt;&#x27;+detailRows([[&#x27;Estado&#x27;,esc(q.status)],[&#x27;Fecha&#x27;,dateLabel(q.when)+&#x27; · &#x27;+(days&lt;=0?&#x27;hoy&#x27;:&#x27;hace &#x27;+plural(days,&#x27;día&#x27;))],[&#x27;Sucursal&#x27;,&#x27;Sucursal &#x27;+branchQuote(q)]])+&#x27;&lt;/section&gt;&#x27;
+      +&#x27;&lt;section class=&quot;ps-drawer-section&quot;&gt;&lt;h4&gt;Partidas&lt;/h4&gt;&lt;ul class=&quot;ps-drawer-lines&quot;&gt;&#x27;+lines.map(([name,amount])=&gt;&#x27;&lt;li&gt;&lt;span&gt;&#x27;+esc(name)+&#x27;&lt;/span&gt;&lt;span&gt;&#x27;+amount+&#x27;&lt;/span&gt;&lt;/li&gt;&#x27;).join(&#x27;&#x27;)+&#x27;&lt;/ul&gt;&lt;div class=&quot;ps-drawer-total&quot;&gt;&lt;span&gt;Total&lt;/span&gt;&lt;strong&gt;&#x27;+money(quoteTotal(q))+&#x27;&lt;/strong&gt;&lt;/div&gt;&lt;/section&gt;&#x27;;
+    actions=&#x27;&lt;button type=&quot;button&quot; data-load-quotation=&quot;&#x27;+q.id+&#x27;&quot; class=&quot;ps-button ps-primary cursor-interaction&quot;&gt;Abrir cotización&lt;/button&gt;&lt;button type=&quot;button&quot; data-open-client=&quot;&#x27;+q.client+&#x27;&quot; class=&quot;ps-button cursor-interaction&quot;&gt;Ver cliente&lt;/button&gt;&#x27;;}
+  else if(type===&#x27;stock&#x27;){const p=products.find(x=&gt;x.id===id);if(!p||!b)return &#x27;&#x27;;const stockLevel=n=&gt;n===0?&#x27;red&#x27;:n&lt;p.min?&#x27;amber&#x27;:&#x27;green&#x27;;
+    level=stockLevel(p.stock[b]);levelText=p.stock[b]===0?&#x27;Agotado&#x27;:p.stock[b]&lt;p.min?&#x27;Stock bajo&#x27;:&#x27;En orden&#x27;;kind=&#x27;Sucursal &#x27;+b;title=p.name;subtitle=p.sku+&#x27; · &#x27;+p.category;
+    body=&#x27;&lt;section class=&quot;ps-drawer-section&quot;&gt;&lt;h4&gt;Existencias&lt;/h4&gt;&#x27;+detailRows([&#x27;A&#x27;,&#x27;B&#x27;].map(x=&gt;[&#x27;Sucursal &#x27;+x+(x===b?&#x27; · revisar&#x27;:&#x27;&#x27;),&#x27;&lt;span class=&quot;ps-level &#x27;+stockLevel(p.stock[x])+&#x27;&quot;&gt;&#x27;+plural(p.stock[x],&#x27;pieza&#x27;)+&#x27;&lt;/span&gt;&#x27;]).concat([[&#x27;Mínimo por sucursal&#x27;,plural(p.min,&#x27;pieza&#x27;)]]))+&#x27;&lt;/section&gt;&#x27;
+      +&#x27;&lt;section class=&quot;ps-drawer-section&quot;&gt;&lt;h4&gt;Producto&lt;/h4&gt;&#x27;+detailRows([[&#x27;Proveedor&#x27;,esc(p.supplier)],[&#x27;Precio de venta&#x27;,money(p.price)]])+&#x27;&lt;/section&gt;&#x27;;
+    actions=&#x27;&lt;button type=&quot;button&quot; data-notice-stock=&quot;&#x27;+p.id+&#x27;&quot; data-notice-branch=&quot;&#x27;+b+&#x27;&quot; class=&quot;ps-button ps-primary cursor-interaction&quot;&gt;&#x27;+(design.role===&#x27;admin&#x27;?&#x27;Agregar stock en sucursal &#x27;+b:&#x27;Ver stock&#x27;)+&#x27;&lt;/button&gt;&#x27;;}
+  else if(type===&#x27;task&#x27;){const t=tasks.find(x=&gt;x.id===id);if(!t)return &#x27;&#x27;;const c=clients.find(x=&gt;x.id===t.client)||{},days=daysSince(t.due);
+    const open=quotes.filter(q=&gt;q.client===t.client&amp;&amp;q.kind===&#x27;Cotización&#x27;&amp;&amp;![&#x27;Rechazada&#x27;,&#x27;Entregada&#x27;,&#x27;Aceptada&#x27;].includes(q.status));
+    level=taskLevel(t);levelText=taskLevelText(t);kind=&#x27;Seguimiento&#x27;;title=c.name||&#x27;Cliente&#x27;;subtitle=t.title;
+    body=&#x27;&lt;section class=&quot;ps-drawer-section&quot;&gt;&lt;h4&gt;Seguimiento&lt;/h4&gt;&#x27;+detailRows([[&#x27;Fecha límite&#x27;,dateLabel(t.due)+&#x27; · &#x27;+(days&gt;0?&#x27;venció hace &#x27;+plural(days,&#x27;día&#x27;):days===0?&#x27;hoy&#x27;:&#x27;en &#x27;+plural(-days,&#x27;día&#x27;))],[&#x27;Responsable&#x27;,esc(t.advisor)]])+&#x27;&lt;/section&gt;&#x27;
+      +&#x27;&lt;section class=&quot;ps-drawer-section&quot;&gt;&lt;h4&gt;Contacto&lt;/h4&gt;&#x27;+detailRows([[&#x27;Teléfono&#x27;,esc(c.phone||&#x27;&#x27;)],[&#x27;Correo&#x27;,esc(c.email||&#x27;&#x27;)],[&#x27;Sucursal&#x27;,c.branch?&#x27;Sucursal &#x27;+c.branch:&#x27;&#x27;]])+&#x27;&lt;/section&gt;&#x27;
+      +(open.length?&#x27;&lt;section class=&quot;ps-drawer-section&quot;&gt;&lt;h4&gt;Cotizaciones abiertas&lt;/h4&gt;&lt;ul class=&quot;ps-drawer-lines&quot;&gt;&#x27;+open.map(q=&gt;&#x27;&lt;li&gt;&lt;button type=&quot;button&quot; data-load-quotation=&quot;&#x27;+q.id+&#x27;&quot; class=&quot;ps-drawer-link cursor-interaction&quot;&gt;&#x27;+esc(q.folio)+&#x27;&lt;/button&gt;&lt;span&gt;&#x27;+money(quoteTotal(q))+&#x27;&lt;/span&gt;&lt;/li&gt;&#x27;).join(&#x27;&#x27;)+&#x27;&lt;/ul&gt;&lt;/section&gt;&#x27;:&#x27;&#x27;);
+    actions=&#x27;&lt;button type=&quot;button&quot; data-complete-task=&quot;&#x27;+t.id+&#x27;&quot; class=&quot;ps-button ps-primary cursor-interaction&quot;&gt;Marcar como realizado&lt;/button&gt;&lt;button type=&quot;button&quot; data-open-client=&quot;&#x27;+t.client+&#x27;&quot; class=&quot;ps-button cursor-interaction&quot;&gt;Ver cliente&lt;/button&gt;&#x27;;}
+  else return &#x27;&#x27;;
+  return &#x27;&lt;header class=&quot;ps-drawer-head&quot;&gt;&lt;div&gt;&lt;div class=&quot;ps-drawer-kicker&quot;&gt;&lt;span class=&quot;ps-level &#x27;+level+&#x27;&quot;&gt;&#x27;+levelText+&#x27;&lt;/span&gt;&lt;span&gt;&#x27;+esc(kind)+&#x27;&lt;/span&gt;&lt;/div&gt;&lt;h3 id=&quot;ps-drawer-title&quot;&gt;&#x27;+esc(title)+&#x27;&lt;/h3&gt;&lt;p&gt;&#x27;+esc(subtitle)+&#x27;&lt;/p&gt;&lt;/div&gt;&lt;button type=&quot;button&quot; data-close-detail class=&quot;ps-drawer-close cursor-interaction&quot; aria-label=&quot;Cerrar detalle&quot;&gt;&lt;i data-lucide=&quot;x&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;/button&gt;&lt;/header&gt;&lt;div class=&quot;ps-drawer-body&quot;&gt;&#x27;+body+&#x27;&lt;/div&gt;&lt;footer class=&quot;ps-drawer-actions&quot;&gt;&#x27;+actions+&#x27;&lt;/footer&gt;&#x27;;
+}
+function openDetail(ref,trigger){
+  const html=detailMarkup(ref);if(!html)return;
+  const drawer=$(&#x27;ps-detail-drawer&#x27;),backdrop=$(&#x27;ps-drawer-backdrop&#x27;);
+  clearTimeout(detailHideTimer);drawer.innerHTML=html;detailRef=ref;detailTrigger=trigger||null;
+  drawer.hidden=false;backdrop.hidden=false;icons();root.querySelector(&#x27;.ps-app&#x27;).inert=true;
+  void drawer.offsetWidth;root.setAttribute(&#x27;data-detail-open&#x27;,&#x27;&#x27;);
+  drawer.querySelector(&#x27;[data-close-detail]&#x27;).focus({preventScroll:true});
+}
+function closeDetail(restoreFocus=true){
+  if(!detailRef)return;
+  const ref=detailRef,trigger=detailTrigger;detailRef=null;detailTrigger=null;
+  root.removeAttribute(&#x27;data-detail-open&#x27;);root.querySelector(&#x27;.ps-app&#x27;).inert=false;
+  clearTimeout(detailHideTimer);detailHideTimer=setTimeout(()=&gt;{if(!detailRef){$(&#x27;ps-detail-drawer&#x27;).hidden=true;$(&#x27;ps-drawer-backdrop&#x27;).hidden=true;}},260);
+  if(restoreFocus)(trigger?.isConnected?trigger:root.querySelector(&#x27;[data-detail=&quot;&#x27;+ref+&#x27;&quot;]&#x27;))?.focus({preventScroll:true});
 }
 
 function reportRange(){return reportState.period===&#x27;custom&#x27;?{from:reportState.from,to:reportState.to}:reportState.period===&#x27;month&#x27;?{from:today.slice(0,7)+&#x27;-01&#x27;,to:today}:reportState.period===&#x27;year&#x27;?{from:today.slice(0,4)+&#x27;-01-01&#x27;,to:today}:{from:localDay(reportState.period===&#x27;7&#x27;?-6:-29),to:today};}
@@ -2674,7 +2863,10 @@ function renderReportDetail(rows){
 }
 function startQuotation(){const c=clients.find(c=&gt;c.id===selectedClient)||clients[0];draft={client:c.id,summary:&#x27;&#x27;,advisor:c.advisor,validity:15,notes:&#x27;&#x27;,discount:0,tax:0,loyalty:defaultLoyalty(),items:[],charges:[]};view=&#x27;quotations&#x27;;quotationTab=&#x27;compose&#x27;;catalogOpen=true;closeEditor();$(&#x27;ps-document-preview&#x27;).hidden=true;render();remember();}
 
-root.addEventListener(&#x27;click&#x27;,e=&gt;{const btn=e.target.closest(&#x27;button&#x27;);if(!btn)return;
+root.addEventListener(&#x27;keydown&#x27;,e=&gt;{if(!detailRef)return;if(e.key===&#x27;Escape&#x27;){e.preventDefault();closeDetail();return;}if(e.key!==&#x27;Tab&#x27;)return;const items=[...$(&#x27;ps-detail-drawer&#x27;).querySelectorAll(&#x27;button:not([disabled])&#x27;)],first=items[0],last=items.at(-1);if(e.shiftKey&amp;&amp;document.activeElement===first){e.preventDefault();last.focus();}else if(!e.shiftKey&amp;&amp;document.activeElement===last){e.preventDefault();first.focus();}});
+root.addEventListener(&#x27;click&#x27;,e=&gt;{if(e.target.id===&#x27;ps-drawer-backdrop&#x27;){closeDetail();return;}const btn=e.target.closest(&#x27;button&#x27;);if(!btn)return;
+if(btn.dataset.detail){openDetail(btn.dataset.detail,btn);return;}
+if(btn.hasAttribute(&#x27;data-close-detail&#x27;)){closeDetail();return;}
 if(btn.hasAttribute(&#x27;data-start-quote&#x27;))startQuotation();
 else if(btn.hasAttribute(&#x27;data-home-add-product&#x27;))openProduct();
 else if(btn.hasAttribute(&#x27;data-home-add-client&#x27;)){view=&#x27;clients&#x27;;closeEditor();render();openClient();}
@@ -2753,7 +2945,7 @@ $(&#x27;ps-feedback&#x27;).addEventListener(&#x27;pointerenter&#x27;,()=&gt;clea
 window.addEventListener(&#x27;openai:set_globals&#x27;,e=&gt;{if(e.detail?.globals?.widgetState){applySaved(e.detail.globals.widgetState);render();}});
 render();
 if(globalThis.ResizeObserver){const chartObserver=new ResizeObserver(()=&gt;{if(view===&#x27;reports&#x27;&amp;&amp;!reportState.detail)drawReportTrends();});chartObserver.observe($(&#x27;ps-report-sales-chart&#x27;));chartObserver.observe($(&#x27;ps-report-margin-chart&#x27;));}
-if(globalThis.Tweak){const tweak=new Tweak({container:root,onChange:()=&gt;{closeEditor();render();}});tweak.addSelect(design,&#x27;navStyle&#x27;,{label:&#x27;Apariencia del menú&#x27;,options:[{label:&#x27;Claro&#x27;,value:&#x27;light&#x27;},{label:&#x27;Oscuro&#x27;,value:&#x27;dark&#x27;}]});tweak.addToggle(design,&#x27;compact&#x27;,{label:&#x27;Filas compactas&#x27;});tweak.addSelect(design,&#x27;role&#x27;,{label:&#x27;Perfil que consulta&#x27;,options:[{label:&#x27;Administración&#x27;,value:&#x27;admin&#x27;},{label:&#x27;Asesor de ventas&#x27;,value:&#x27;sales&#x27;}]});}
+if(globalThis.Tweak){const tweak=new Tweak({container:root,onChange:()=&gt;{closeEditor();render();}});tweak.addToggle(design,&#x27;compact&#x27;,{label:&#x27;Filas compactas&#x27;});tweak.addSelect(design,&#x27;role&#x27;,{label:&#x27;Perfil que consulta&#x27;,options:[{label:&#x27;Administración&#x27;,value:&#x27;admin&#x27;},{label:&#x27;Asesor de ventas&#x27;,value:&#x27;sales&#x27;}]});}
 })();
 &lt;/script&gt;
 
@@ -3444,15 +3636,7 @@ if(globalThis.Tweak){const tweak=new Tweak({container:root,onChange:()=&gt;{clos
       return;
     }
     if (data.type === "height") {
-      const height = data.height;
-      if (
-        typeof height === "number" &&
-        Number.isFinite(height) &&
-        height >= 0 &&
-        height <= 10_000
-      ) {
-        frame.style.height = Math.ceil(height) + "px";
-      }
+      // The app scrolls inside a viewport-height frame so its fixed detail drawer stays on screen.
       return;
     }
     if (data.type === "scroll-to") {
