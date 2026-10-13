@@ -6,7 +6,7 @@
 <meta name="referrer" content="no-referrer">
 <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline' 'unsafe-eval' 'wasm-unsafe-eval' blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; style-src 'unsafe-inline' blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; img-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; font-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; media-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; worker-src blob:; connect-src blob: data:; frame-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
 <title>Panel Shop — Maqueta administrativa</title>
-<style>:root{color-scheme:light;background:#fff}html,body{margin:0}body{box-sizing:border-box;padding:1rem;background:inherit}iframe{display:block;width:100%;height:calc(100vh - 2rem);margin:0 auto;border:0}</style>
+<style>:root{color-scheme:light;background:#fff}html,body{margin:0}body{box-sizing:border-box;padding:0;background:inherit}iframe{display:block;width:100%;height:100vh;height:100dvh;margin:0 auto;border:0}</style>
 </head>
 <body>
 <iframe id="codex-visualization" sandbox="allow-scripts" referrerpolicy="no-referrer" title="Panel Shop — Maqueta administrativa" data-srcdoc="&lt;!doctype html&gt;
@@ -1781,12 +1781,11 @@ html&gt;body{padding:0}&lt;/style&gt;
 })();
 &lt;/script&gt;
 &lt;div id=&quot;panelshop-inventario&quot; aria-label=&quot;Propuesta de Panel Shop: inventario, CRM, cotizaciones y reportes&quot;&gt;
-  &lt;div class=&quot;ps-proposal&quot;&gt;Propuesta de interfaz &lt;span&gt;Datos de ejemplo&lt;/span&gt;&lt;/div&gt;
   &lt;div class=&quot;ps-app&quot;&gt;
     &lt;aside class=&quot;ps-sidebar&quot;&gt;
       &lt;div class=&quot;ps-sidebar-head&quot;&gt;
         &lt;div class=&quot;ps-brand&quot;&gt;&lt;span class=&quot;ps-brandmark&quot;&gt;P&lt;/span&gt;&lt;div&gt;Panel Shop&lt;small&gt;Administración&lt;/small&gt;&lt;/div&gt;&lt;/div&gt;
-        &lt;button type=&quot;button&quot; id=&quot;ps-menu-toggle&quot; class=&quot;ps-menu-toggle cursor-interaction&quot; aria-expanded=&quot;false&quot; aria-controls=&quot;ps-sidebar-groups&quot;&gt;&lt;i data-lucide=&quot;menu&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;i data-lucide=&quot;x&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;span&gt;Menú&lt;/span&gt;&lt;/button&gt;
+        &lt;button type=&quot;button&quot; id=&quot;ps-menu-toggle&quot; class=&quot;ps-menu-toggle cursor-interaction&quot; aria-expanded=&quot;false&quot; aria-controls=&quot;ps-sidebar-groups&quot; aria-label=&quot;Abrir menú&quot;&gt;&lt;i data-lucide=&quot;menu&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;i data-lucide=&quot;x&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;span&gt;Menú&lt;/span&gt;&lt;/button&gt;
       &lt;/div&gt;
       &lt;div id=&quot;ps-sidebar-groups&quot; class=&quot;ps-sidebar-groups&quot;&gt;
         &lt;nav aria-label=&quot;Inicio&quot;&gt;&lt;button type=&quot;button&quot; data-view=&quot;home&quot; class=&quot;ps-nav cursor-interaction&quot;&gt;&lt;i data-lucide=&quot;layout-dashboard&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; Inicio&lt;/button&gt;&lt;/nav&gt;
@@ -1820,6 +1819,7 @@ html&gt;body{padding:0}&lt;/style&gt;
         &lt;/div&gt;
       &lt;/div&gt;
       &lt;div class=&quot;ps-sidebar-foot&quot;&gt;&lt;i data-lucide=&quot;store&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; Dos sucursales&lt;/div&gt;
+      &lt;div class=&quot;ps-menu-backdrop&quot; data-menu-backdrop aria-hidden=&quot;true&quot;&gt;&lt;/div&gt;
     &lt;/aside&gt;
     &lt;main class=&quot;ps-main&quot;&gt;
       &lt;header class=&quot;ps-topbar&quot;&gt;
@@ -1917,8 +1917,6 @@ html&gt;body{padding:0}&lt;/style&gt;
 #panelshop-inventario button,#panelshop-inventario input,#panelshop-inventario select,#panelshop-inventario textarea{font:inherit}
 #panelshop-inventario button{color:inherit}
 #panelshop-inventario svg{width:18px;height:18px;flex-shrink:0}
-#panelshop-inventario .ps-proposal{display:flex;align-items:center;gap:12px;padding:8px 2px 14px;color:var(--ps-muted);font-size:12px}
-#panelshop-inventario .ps-proposal span{padding:2px 8px;border-radius:5px;background:var(--ps-soft);color:var(--ps-teal)}
 #panelshop-inventario .ps-app{display:grid;grid-template-columns:164px minmax(0,1fr);background:var(--ps-bg);border:1px solid var(--ps-line);border-radius:14px;overflow:hidden;min-height:580px}
 #panelshop-inventario .ps-sidebar{background:var(--ps-side);color:var(--ps-sideink);padding:24px 14px;display:flex;flex-direction:column;gap:22px}
 #panelshop-inventario .ps-brand{display:flex;gap:9px;align-items:center;font-size:16px;font-weight:500}
@@ -2339,8 +2337,9 @@ html&gt;body{padding:0}&lt;/style&gt;
 /* Monocromo: barra lateral índigo, contenido blanco, semáforo rojo / amarillo / verde para pendientes */
 html:root{color-scheme:light!important}
 #panelshop-inventario{color-scheme:light;--ps-bg:#fff;--ps-surface:#fff;--ps-ink:#0a0a0a;--ps-muted:#6b6b6b;--ps-line:#e6e6e6;--ps-soft:#f4f4f4;--ps-teal:#0a0a0a;--ps-tealtext:#fff;--ps-sidepaper:#F4F3FC;--ps-side:#08043E;--ps-sideink:color-mix(in srgb,#F4F3FC 62%,#08043E);--ps-navactive:color-mix(in srgb,#F4F3FC 10%,#08043E);--ps-navhover:color-mix(in srgb,#F4F3FC 6%,#08043E);--ps-navactiveink:#F4F3FC;--ps-red:#dc2626;--ps-amber:#b45309;--ps-green:#15803d;--ps-redbg:color-mix(in srgb,#dc2626 10%,transparent);--ps-amberbg:color-mix(in srgb,#eab308 18%,transparent);--ps-greenbg:color-mix(in srgb,#16a34a 11%,transparent);--ps-warn:var(--ps-amber);--ps-warnbg:var(--ps-amberbg);--ps-danger:var(--ps-red);--ps-dangerbg:var(--ps-redbg);--ps-success:var(--ps-green);--ps-successbg:var(--ps-greenbg);--ps-ease-out:cubic-bezier(0.23,1,0.32,1);--ps-ease-drawer:cubic-bezier(0.32,0.72,0,1)}
-#panelshop-inventario .ps-proposal span{background:var(--ps-soft);color:var(--ps-ink)}
-#panelshop-inventario .ps-sidebar{background:var(--ps-side);color:var(--ps-sideink);border-right:0}
+#panelshop-inventario .ps-app{border:0;border-radius:0;min-height:100vh;min-height:100dvh;overflow:visible}
+#panelshop-inventario .ps-sidebar{background:var(--ps-side);color:var(--ps-sideink);border-right:0;position:sticky;top:0;align-self:start;height:100vh;height:100dvh;overflow-y:auto}
+#panelshop-inventario .ps-menu-backdrop{display:none}
 #panelshop-inventario .ps-brand{color:var(--ps-sidepaper)}
 #panelshop-inventario .ps-brand small{color:var(--ps-sideink);opacity:1}
 #panelshop-inventario .ps-brandmark{background:var(--ps-sidepaper);color:var(--ps-side)}
@@ -2472,14 +2471,17 @@ html:root{color-scheme:light!important}
 #panelshop-inventario .ps-notice-filters button[aria-pressed=false]:hover{border-color:var(--ps-ink);color:var(--ps-ink)}
 }
 @media (max-width:730px){
-#panelshop-inventario .ps-sidebar{flex-direction:column;align-items:stretch;flex-wrap:nowrap;justify-content:flex-start;gap:0;padding:12px 16px}
-#panelshop-inventario .ps-sidebar-head{margin-bottom:0}
-#panelshop-inventario .ps-menu-toggle{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:8px 14px;border:1px solid color-mix(in srgb,#F4F3FC 18%,transparent);border-radius:8px;background:transparent;color:var(--ps-sidepaper);font-size:13px;font-weight:500;transition:background-color 150ms ease,transform 160ms var(--ps-ease-out)}
+#panelshop-inventario .ps-sidebar{z-index:30;height:auto;overflow:visible;flex-direction:column;align-items:stretch;flex-wrap:nowrap;justify-content:flex-start;gap:0;padding:0 12px 0 6px;border-bottom:0}
+#panelshop-inventario .ps-sidebar-head{height:56px;margin:0;justify-content:flex-start;gap:6px}
+#panelshop-inventario .ps-menu-toggle{order:-1;display:inline-grid;place-items:center;width:44px;height:44px;padding:0;border:0;border-radius:8px;background:transparent;color:var(--ps-sidepaper);transition:background-color 150ms ease,transform 160ms var(--ps-ease-out)}
+#panelshop-inventario .ps-menu-toggle span{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+#panelshop-inventario .ps-menu-toggle svg{width:22px;height:22px}
 #panelshop-inventario .ps-menu-toggle .lucide-x,#panelshop-inventario .ps-sidebar[data-menu-open] .ps-menu-toggle .lucide-menu{display:none}
 #panelshop-inventario .ps-sidebar[data-menu-open] .ps-menu-toggle .lucide-x{display:block}
-#panelshop-inventario .ps-sidebar-groups{display:none;padding-top:12px}
-#panelshop-inventario .ps-sidebar[data-menu-open] .ps-sidebar-groups{display:flex;transition:opacity 150ms ease}
-@starting-style{#panelshop-inventario .ps-sidebar[data-menu-open] .ps-sidebar-groups{opacity:0}}
+#panelshop-inventario .ps-sidebar-groups{position:fixed;top:56px;left:0;bottom:0;z-index:45;width:min(300px,84vw);display:flex;padding:12px;overflow-y:auto;overscroll-behavior:contain;background:var(--ps-side);box-shadow:16px 0 40px -12px rgb(0 0 0 / 35%);visibility:hidden;transform:translateX(-100%);transition:transform 200ms var(--ps-ease-drawer),visibility 0s linear 200ms}
+#panelshop-inventario .ps-sidebar[data-menu-open] .ps-sidebar-groups{visibility:visible;transform:none;transition:transform 280ms var(--ps-ease-drawer),visibility 0s}
+#panelshop-inventario .ps-menu-backdrop{display:block;position:fixed;top:56px;left:0;right:0;bottom:0;z-index:44;background:rgb(0 0 0 / 32%);opacity:0;pointer-events:none;transition:opacity 200ms ease}
+#panelshop-inventario .ps-sidebar[data-menu-open] .ps-menu-backdrop{opacity:1;pointer-events:auto}
 #panelshop-inventario .ps-sidebar nav{display:grid;width:auto;flex-wrap:nowrap}
 #panelshop-inventario .ps-navgroup-toggle,#panelshop-inventario .ps-nav{min-height:44px}
 #panelshop-inventario .ps-nav{font-size:13px;padding:11px 12px}
@@ -2494,6 +2496,10 @@ html:root{color-scheme:light!important}
 #panelshop-inventario .ps-mini{min-height:44px}
 #panelshop-inventario .ps-drawer{top:auto;left:0;width:100%;max-height:85vh;border-left:0;border-top:1px solid var(--ps-line);border-radius:16px 16px 0 0;box-shadow:0 -16px 40px -12px rgb(0 0 0 / 18%);transform:translateY(100%)}
 #panelshop-inventario .ps-drawer-close{width:44px;height:44px}
+}
+@media (max-width:730px) and (prefers-reduced-motion:reduce){
+#panelshop-inventario .ps-sidebar-groups{transform:none!important;opacity:0;transition:opacity 150ms ease,visibility 0s linear 150ms!important}
+#panelshop-inventario .ps-sidebar[data-menu-open] .ps-sidebar-groups{opacity:1;transition:opacity 150ms ease,visibility 0s!important}
 }
 @media (prefers-reduced-motion:reduce){
 #panelshop-inventario .ps-drawer{transform:none!important;opacity:0;transition:opacity 200ms ease!important}
@@ -2572,13 +2578,14 @@ let homeNoticeFilter=&#x27;all&#x27;,showAllNotices=false,detailRef=null,detailT
 let openNavGroup=null,lastNavView=null;
 const navGroupOf={products:&#x27;inventory&#x27;,stock:&#x27;inventory&#x27;,movements:&#x27;inventory&#x27;,clients:&#x27;clients&#x27;,followups:&#x27;clients&#x27;,quotations:&#x27;sales&#x27;,statistics:&#x27;admin&#x27;,reports:&#x27;admin&#x27;};
 function applyNav(){
-  if(view!==lastNavView){openNavGroup=navGroupOf[view]??openNavGroup;lastNavView=view;}
+  if(view!==lastNavView){openNavGroup=navGroupOf[view]??openNavGroup;lastNavView=view;scrollTo(0,0);}
   root.querySelectorAll(&#x27;.ps-navgroup&#x27;).forEach(group=&gt;{const key=group.dataset.navGroup,items=group.querySelector(&#x27;.ps-navgroup-items&#x27;),open=openNavGroup===key;
     group.hidden=[...items.querySelectorAll(&#x27;[data-view]&#x27;)].every(b=&gt;b.hidden);
     group.querySelector(&#x27;[data-nav-toggle]&#x27;).setAttribute(&#x27;aria-expanded&#x27;,open);items.hidden=!open;
     group.toggleAttribute(&#x27;data-has-active&#x27;,navGroupOf[view]===key);});
 }
-function setMenuOpen(open){root.querySelector(&#x27;.ps-sidebar&#x27;).toggleAttribute(&#x27;data-menu-open&#x27;,open);$(&#x27;ps-menu-toggle&#x27;).setAttribute(&#x27;aria-expanded&#x27;,open);}
+function setMenuOpen(open){const sidebar=root.querySelector(&#x27;.ps-sidebar&#x27;),toggle=$(&#x27;ps-menu-toggle&#x27;);if(sidebar.hasAttribute(&#x27;data-menu-open&#x27;)===open)return;sidebar.toggleAttribute(&#x27;data-menu-open&#x27;,open);toggle.setAttribute(&#x27;aria-expanded&#x27;,open);toggle.setAttribute(&#x27;aria-label&#x27;,open?&#x27;Cerrar menú&#x27;:&#x27;Abrir menú&#x27;);root.querySelector(&#x27;.ps-main&#x27;).inert=open;if(open)$(&#x27;ps-sidebar-groups&#x27;).querySelector(&#x27;button&#x27;)?.focus({preventScroll:true});}
+matchMedia(&#x27;(min-width:731px)&#x27;).addEventListener(&#x27;change&#x27;,e=&gt;{if(e.matches)setMenuOpen(false);});
 const design={compact:false,role:&#x27;admin&#x27;};
 const undoStack=[];
 let notificationTimer=null,lastToastText=&#x27;&#x27;,toastVersion=0,editSequence=0,activeEditToken=&#x27;&#x27;;
@@ -2918,8 +2925,8 @@ function renderReportDetail(rows){
 }
 function startQuotation(){const c=clients.find(c=&gt;c.id===selectedClient)||clients[0];draft={client:c.id,summary:&#x27;&#x27;,advisor:c.advisor,validity:15,notes:&#x27;&#x27;,discount:0,tax:0,loyalty:defaultLoyalty(),items:[],charges:[]};view=&#x27;quotations&#x27;;quotationTab=&#x27;compose&#x27;;catalogOpen=true;closeEditor();$(&#x27;ps-document-preview&#x27;).hidden=true;render();remember();}
 
-root.addEventListener(&#x27;keydown&#x27;,e=&gt;{if(!detailRef)return;if(e.key===&#x27;Escape&#x27;){e.preventDefault();closeDetail();return;}if(e.key!==&#x27;Tab&#x27;)return;const items=[...$(&#x27;ps-detail-drawer&#x27;).querySelectorAll(&#x27;button:not([disabled])&#x27;)],first=items[0],last=items.at(-1);if(e.shiftKey&amp;&amp;document.activeElement===first){e.preventDefault();last.focus();}else if(!e.shiftKey&amp;&amp;document.activeElement===last){e.preventDefault();first.focus();}});
-root.addEventListener(&#x27;click&#x27;,e=&gt;{if(e.target.id===&#x27;ps-drawer-backdrop&#x27;){closeDetail();return;}const btn=e.target.closest(&#x27;button&#x27;);if(!btn)return;
+root.addEventListener(&#x27;keydown&#x27;,e=&gt;{if(e.key===&#x27;Escape&#x27;&amp;&amp;root.querySelector(&#x27;.ps-sidebar[data-menu-open]&#x27;)){setMenuOpen(false);$(&#x27;ps-menu-toggle&#x27;).focus();return;}if(!detailRef)return;if(e.key===&#x27;Escape&#x27;){e.preventDefault();closeDetail();return;}if(e.key!==&#x27;Tab&#x27;)return;const items=[...$(&#x27;ps-detail-drawer&#x27;).querySelectorAll(&#x27;button:not([disabled])&#x27;)],first=items[0],last=items.at(-1);if(e.shiftKey&amp;&amp;document.activeElement===first){e.preventDefault();last.focus();}else if(!e.shiftKey&amp;&amp;document.activeElement===last){e.preventDefault();first.focus();}});
+root.addEventListener(&#x27;click&#x27;,e=&gt;{if(e.target.id===&#x27;ps-drawer-backdrop&#x27;){closeDetail();return;}if(e.target.closest(&#x27;[data-menu-backdrop]&#x27;)){setMenuOpen(false);return;}const btn=e.target.closest(&#x27;button&#x27;);if(!btn)return;
 if(btn.dataset.detail){openDetail(btn.dataset.detail,btn);return;}
 if(btn.hasAttribute(&#x27;data-close-detail&#x27;)){closeDetail();return;}
 if(btn.dataset.navToggle){openNavGroup=openNavGroup===btn.dataset.navToggle?null:btn.dataset.navToggle;applyNav();return;}
