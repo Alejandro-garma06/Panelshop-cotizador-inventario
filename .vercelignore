@@ -1,0 +1,5 @@
+.work/
+Panel-Shop-Inventario.html
+node_modules/
+.env*
+.vercel/
